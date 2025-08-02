@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import {
   FaPhone,
   FaWhatsapp,
-  FaEnvelope,
   FaMapMarkerAlt,
   FaInstagram,
   FaFacebook,

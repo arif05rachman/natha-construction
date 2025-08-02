@@ -944,9 +944,9 @@ export default function Home() {
                 className="mb-8 leading-relaxed text-lg theme-transition"
                 style={{ color: "var(--muted-foreground)" }}
               >
-                "Sangat puas dengan hasil kerja Natha Konstruksi. Atap rumah
-                saya jadi lebih kokoh dan tahan lama. Tim kerjanya profesional
-                dan ramah."
+                &ldquo;Sangat puas dengan hasil kerja Natha Konstruksi. Atap
+                rumah saya jadi lebih kokoh dan tahan lama. Tim kerjanya
+                profesional dan ramah.&rdquo;
               </p>
               <div className="flex items-center">
                 <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center text-white font-bold text-xl mr-4 shadow-lg">
@@ -989,8 +989,9 @@ export default function Home() {
                 className="mb-8 leading-relaxed text-lg theme-transition"
                 style={{ color: "var(--muted-foreground)" }}
               >
-                "Kandang ayam yang dibuat sangat bagus dan efisien. Ventilasinya
-                optimal, ayam jadi lebih sehat. Harga juga sangat terjangkau."
+                &ldquo;Kandang ayam yang dibuat sangat bagus dan efisien.
+                Ventilasinya optimal, ayam jadi lebih sehat. Harga juga sangat
+                terjangkau.&rdquo;
               </p>
               <div className="flex items-center">
                 <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-green-700 rounded-2xl flex items-center justify-center text-white font-bold text-xl mr-4 shadow-lg">
@@ -1033,8 +1034,9 @@ export default function Home() {
                 className="mb-8 leading-relaxed text-lg theme-transition"
                 style={{ color: "var(--muted-foreground)" }}
               >
-                "Gudang workshop yang dibuat sangat memuaskan. Konstruksinya
-                kuat, luasannya optimal, dan pengerjaannya cepat. Recommended!"
+                &ldquo;Gudang workshop yang dibuat sangat memuaskan.
+                Konstruksinya kuat, luasannya optimal, dan pengerjaannya cepat.
+                Recommended!&rdquo;
               </p>
               <div className="flex items-center">
                 <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-orange-700 rounded-2xl flex items-center justify-center text-white font-bold text-xl mr-4 shadow-lg">
