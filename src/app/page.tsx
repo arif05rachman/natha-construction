@@ -29,8 +29,14 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-2xl">N</span>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt="Natha Konstruksi Logo"
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h1
@@ -1381,8 +1387,14 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-xl">N</span>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+                  <Image
+                    src="/logo.png"
+                    alt="Natha Konstruksi Logo"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <h3 className="font-bold text-xl">Natha Konstruksi</h3>
