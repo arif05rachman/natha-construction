@@ -1,26 +1,377 @@
 @import "tailwindcss";
 
 :root {
+  /* Light mode colors - Enhanced contrast */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --secondary: #f8fafc;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #475569;
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #cbd5e1;
+  --input: #cbd5e1;
+  --ring: #1d4ed8;
+  --radius: 0.5rem;
+  --chart-1: #1d4ed8;
+  --chart-2: #7c3aed;
+  --chart-3: #dc2626;
+  --chart-4: #16a34a;
+  --chart-5: #ea580c;
+
+  /* RGB values for opacity support */
+  --background-rgb: 255, 255, 255;
+  --foreground-rgb: 15, 23, 42;
+  --card-rgb: 255, 255, 255;
+  --card-foreground-rgb: 15, 23, 42;
+  --primary-rgb: 29, 78, 216;
+  --secondary-rgb: 248, 250, 252;
+  --muted-rgb: 241, 245, 249;
+  --muted-foreground-rgb: 71, 85, 105;
+  --border-rgb: 203, 213, 225;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode colors - Enhanced contrast */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020617;
+    --foreground: #f8fafc;
+    --card: #0f172a;
+    --card-foreground: #f8fafc;
+    --popover: #0f172a;
+    --popover-foreground: #f8fafc;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #1e293b;
+    --secondary-foreground: #f1f5f9;
+    --muted: #334155;
+    --muted-foreground: #cbd5e1;
+    --accent: #1e293b;
+    --accent-foreground: #f1f5f9;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #475569;
+    --input: #475569;
+    --ring: #3b82f6;
+    --chart-1: #3b82f6;
+    --chart-2: #8b5cf6;
+    --chart-3: #ef4444;
+    --chart-4: #22c55e;
+    --chart-5: #f97316;
+
+    /* RGB values for opacity support */
+    --background-rgb: 2, 6, 23;
+    --foreground-rgb: 248, 250, 252;
+    --card-rgb: 15, 23, 42;
+    --card-foreground-rgb: 248, 250, 252;
+    --primary-rgb: 59, 130, 246;
+    --secondary-rgb: 30, 41, 59;
+    --muted-rgb: 51, 65, 85;
+    --muted-foreground-rgb: 203, 213, 225;
+    --border-rgb: 71, 85, 105;
   }
+}
+
+/* Manual dark mode class - Enhanced contrast */
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #1e293b;
+  --secondary-foreground: #f1f5f9;
+  --muted: #334155;
+  --muted-foreground: #cbd5e1;
+  --accent: #1e293b;
+  --accent-foreground: #f1f5f9;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #475569;
+  --input: #475569;
+  --ring: #3b82f6;
+  --chart-1: #3b82f6;
+  --chart-2: #8b5cf6;
+  --chart-3: #ef4444;
+  --chart-4: #22c55e;
+  --chart-5: #f97316;
+
+  /* RGB values for opacity support */
+  --background-rgb: 2, 6, 23;
+  --foreground-rgb: 248, 250, 252;
+  --card-rgb: 15, 23, 42;
+  --card-foreground-rgb: 248, 250, 252;
+  --primary-rgb: 59, 130, 246;
+  --secondary-rgb: 30, 41, 59;
+  --muted-rgb: 51, 65, 85;
+  --muted-foreground-rgb: 203, 213, 225;
+  --border-rgb: 71, 85, 105;
+}
+
+/* Base styles */
+* {
+  border-color: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth transitions for dark mode */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Custom scrollbar for dark mode */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--muted);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+  }
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Focus styles for better accessibility */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Custom utility classes for dark mode */
+.bg-card {
+  background-color: var(--card);
+}
+
+.text-card-foreground {
+  color: var(--card-foreground);
+}
+
+.border-border {
+  border-color: var(--border);
+}
+
+.bg-muted {
+  background-color: var(--muted);
+}
+
+.text-muted-foreground {
+  color: var(--muted-foreground);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.text-accent-foreground {
+  color: var(--accent-foreground);
+}
+
+.bg-destructive {
+  background-color: var(--destructive);
+}
+
+.text-destructive-foreground {
+  color: var(--destructive-foreground);
+}
+
+/* Animation for theme switching */
+.theme-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced contrast utilities */
+.text-high-contrast {
+  color: var(--foreground);
+}
+
+.bg-high-contrast {
+  background-color: var(--background);
+}
+
+.text-medium-contrast {
+  color: var(--muted-foreground);
+}
+
+.bg-medium-contrast {
+  background-color: var(--muted);
+}
+
+/* Section backgrounds with better contrast */
+.section-light {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.section-dark {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.dark .section-light {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.dark .section-dark {
+  background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+}
+
+/* Override Tailwind classes for better dark mode support */
+.dark .bg-white {
+  background-color: var(--card);
+}
+
+.dark .text-gray-900,
+.dark .text-slate-900 {
+  color: var(--foreground);
+}
+
+.dark .text-gray-600,
+.dark .text-slate-600 {
+  color: var(--muted-foreground);
+}
+
+.dark .text-gray-700,
+.dark .text-slate-700 {
+  color: var(--muted-foreground);
+}
+
+.dark .text-gray-800,
+.dark .text-slate-800 {
+  color: var(--foreground);
+}
+
+.dark .bg-gray-50,
+.dark .bg-slate-50 {
+  background-color: var(--muted);
+}
+
+.dark .bg-gray-100,
+.dark .bg-slate-100 {
+  background-color: var(--secondary);
+}
+
+.dark .bg-gray-200,
+.dark .bg-slate-200 {
+  background-color: var(--border);
+}
+
+.dark .border-gray-200,
+.dark .border-slate-200 {
+  border-color: var(--border);
+}
+
+.dark .border-gray-300,
+.dark .border-slate-300 {
+  border-color: var(--border);
+}
+
+/* Ensure proper contrast for all text elements */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: var(--foreground);
+}
+
+.dark p,
+.dark span,
+.dark div {
+  color: inherit;
+}
+
+/* Override specific component backgrounds */
+.dark .bg-white\/95 {
+  background-color: rgba(15, 23, 42, 0.95);
+}
+
+.dark .bg-white\/10 {
+  background-color: rgba(15, 23, 42, 0.1);
+}
+
+.dark .bg-white\/20 {
+  background-color: rgba(15, 23, 42, 0.2);
+}
+
+.dark .bg-white\/5 {
+  background-color: rgba(15, 23, 42, 0.05);
 }
