@@ -30,8 +30,12 @@ export default function Home() {
       </a>
       {/* Header */}
       <header
-        className="backdrop-blur-md shadow-lg fixed w-full top-0 z-50 transition-all duration-300 theme-transition"
-        style={{ backgroundColor: "var(--card)", opacity: 0.95 }}
+        className="backdrop-blur-md shadow-lg fixed w-full top-0 z-50 transition-all duration-300 theme-transition border-b"
+        style={{
+          backgroundColor: "var(--card)",
+          opacity: 0.95,
+          borderColor: "var(--border)",
+        }}
         role="banner"
       >
         <div className="container mx-auto px-4 py-4">
@@ -78,7 +82,7 @@ export default function Home() {
                 Beranda
                 <span
                   className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: "var(--primary)" }}
+                  style={{ backgroundColor: "var(--primary-bg)" }}
                 ></span>
               </a>
               <a
@@ -89,7 +93,7 @@ export default function Home() {
                 Layanan
                 <span
                   className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: "var(--primary)" }}
+                  style={{ backgroundColor: "var(--primary-bg)" }}
                 ></span>
               </a>
               <a
@@ -100,7 +104,7 @@ export default function Home() {
                 Galeri
                 <span
                   className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: "var(--primary)" }}
+                  style={{ backgroundColor: "var(--primary-bg)" }}
                 ></span>
               </a>
               <a
@@ -111,7 +115,7 @@ export default function Home() {
                 Tentang
                 <span
                   className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: "var(--primary)" }}
+                  style={{ backgroundColor: "var(--primary-bg)" }}
                 ></span>
               </a>
               <a
@@ -122,7 +126,7 @@ export default function Home() {
                 Testimoni
                 <span
                   className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: "var(--primary)" }}
+                  style={{ backgroundColor: "var(--primary-bg)" }}
                 ></span>
               </a>
               <a
@@ -133,7 +137,7 @@ export default function Home() {
                 FAQ
                 <span
                   className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: "var(--primary)" }}
+                  style={{ backgroundColor: "var(--primary-bg)" }}
                 ></span>
               </a>
               <a
@@ -144,40 +148,44 @@ export default function Home() {
                 Kontak
                 <span
                   className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: "var(--primary)" }}
+                  style={{ backgroundColor: "var(--primary-bg)" }}
                 ></span>
               </a>
+              <div className="hidden md:flex items-center space-x-3">
+                <ThemeToggle />
+                <a
+                  href="https://www.facebook.com/profile.php?id=61557044876692"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 text-white p-3 rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <FaFacebook className="text-lg" />
+                </a>
+                <a
+                  href="https://www.instagram.com/kontruksikandangayam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white p-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+                  }}
+                >
+                  <FaInstagram className="text-lg" />
+                </a>
+                <a
+                  href="https://wa.me/62882001425081"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 text-white px-4 py-3 rounded-xl hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+                >
+                  <FaWhatsapp />
+                  <span className="hidden lg:inline">WhatsApp</span>
+                </a>
+              </div>
             </nav>
 
             {/* Desktop Social Buttons & Theme Toggle */}
-            <div className="hidden md:flex items-center space-x-3">
-              <ThemeToggle />
-              <a
-                href="https://www.facebook.com/profile.php?id=61557044876692"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-600 text-white p-3 rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                <FaFacebook className="text-lg" />
-              </a>
-              <a
-                href="https://www.instagram.com/kontruksikandangayam"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                <FaInstagram className="text-lg" />
-              </a>
-              <a
-                href="https://wa.me/62882001425081"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 text-white px-4 py-3 rounded-xl hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
-              >
-                <FaWhatsapp />
-                <span className="hidden lg:inline">WhatsApp</span>
-              </a>
-            </div>
 
             {/* Mobile Menu Component */}
             <div className="lg:hidden flex items-center space-x-2">
@@ -188,38 +196,11 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Breadcrumb Navigation */}
-      <nav
-        className="pt-20 pb-4 px-4"
-        aria-label="Breadcrumb"
-        style={{ backgroundColor: "var(--background)" }}
-      >
-        <div className="container mx-auto">
-          <ol className="flex items-center space-x-2 text-sm">
-            <li>
-              <a
-                href="#beranda"
-                className="theme-transition hover:text-blue-600"
-                style={{ color: "var(--muted-foreground)" }}
-              >
-                Beranda
-              </a>
-            </li>
-            <li className="text-gray-400">/</li>
-            <li
-              className="theme-transition"
-              style={{ color: "var(--foreground)" }}
-            >
-              Konstruksi Baja Ringan
-            </li>
-          </ol>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section
         id="beranda"
-        className="relative pt-20 min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative pt-16 min-h-screen flex items-center justify-center overflow-hidden theme-transition"
+        style={{ backgroundColor: "var(--background)" }}
         aria-labelledby="hero-heading"
       >
         {/* Video Background */}
@@ -243,7 +224,12 @@ export default function Home() {
             />
           </video>
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
+          <div
+            className="absolute inset-0 theme-transition"
+            style={{
+              background: "var(--hero-overlay)",
+            }}
+          ></div>
         </div>
 
         <div
@@ -254,25 +240,25 @@ export default function Home() {
             <div className="text-center lg:text-left">
               <h1
                 id="hero-heading"
-                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg"
               >
                 Konstruksi Baja Ringan
-                <span className="text-blue-300 dark:text-blue-200 block">
+                <span className="text-blue-200 dark:text-blue-100 block drop-shadow-lg">
                   Terpercaya & Berkualitas
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-200 dark:text-slate-100 mb-8 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-xl md:text-2xl text-slate-100 dark:text-slate-50 mb-8 max-w-2xl mx-auto lg:mx-0 drop-shadow-lg">
                 Spesialis konstruksi baja ringan untuk{" "}
                 <a
                   href="#layanan"
-                  className="text-blue-300 hover:text-blue-200 underline"
+                  className="text-blue-200 hover:text-blue-100 underline font-semibold"
                 >
                   atap rumah
                 </a>
                 ,{" "}
                 <a
                   href="#layanan"
-                  className="text-blue-300 hover:text-blue-200 underline"
+                  className="text-blue-200 hover:text-blue-100 underline font-semibold"
                 >
                   kandang ternak
                 </a>
@@ -280,7 +266,7 @@ export default function Home() {
                 dengan harga yang bersaing. Lihat{" "}
                 <a
                   href="#galeri"
-                  className="text-blue-300 hover:text-blue-200 underline"
+                  className="text-blue-200 hover:text-blue-100 underline font-semibold"
                 >
                   portfolio pekerjaan kami
                 </a>
@@ -289,13 +275,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="#kontak"
-                  className="bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-300 text-center font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-300 text-center font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 drop-shadow-lg"
                 >
                   Konsultasi Gratis
                 </a>
                 <a
                   href="#layanan"
-                  className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-center font-semibold text-lg backdrop-blur-sm"
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-center font-semibold text-lg backdrop-blur-sm drop-shadow-lg"
                 >
                   Lihat Layanan
                 </a>
@@ -307,7 +293,11 @@ export default function Home() {
                   href="https://www.tiktok.com/@kontruksikandang"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-black text-white px-4 py-2 rounded-xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+                  className="text-white px-4 py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2 drop-shadow-lg"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #ff0050 0%, #00f2ea 100%)",
+                  }}
                 >
                   <span className="text-lg">🎵</span>
                   <span className="font-semibold text-sm">TikTok</span>
@@ -316,36 +306,58 @@ export default function Home() {
                   href="https://www.instagram.com/kontruksikandangayam"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+                  className="text-white px-4 py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2 drop-shadow-lg"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+                  }}
                 >
                   <FaInstagram className="text-lg" />
-                  <span className="font-semibold text-sm">Instagram</span>
+                  <span className="text-sm font-semibold">Instagram</span>
                 </a>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white/10 dark:bg-slate-900/30 backdrop-blur-md rounded-3xl p-8 border border-white/20 dark:border-slate-700/30">
-                <h3 className="text-2xl font-bold text-white mb-6">
+              <div className="bg-white/15 dark:bg-slate-900/40 backdrop-blur-md rounded-3xl p-8 border border-white/30 dark:border-slate-700/40 drop-shadow-lg">
+                <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-lg">
                   Mengapa Memilih Kami?
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <FaCheckCircle className="text-green-300 dark:text-green-200 text-xl" />
-                    <span className="text-white text-lg">
+                    <FaCheckCircle
+                      className="text-xl drop-shadow-lg"
+                      style={{ color: "#22c55e" }}
+                    />
+                    <span className="text-white text-lg drop-shadow-lg font-medium">
                       Pengalaman 10+ tahun
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <FaCheckCircle className="text-green-300 dark:text-green-200 text-xl" />
-                    <span className="text-white text-lg">Garansi 5 tahun</span>
+                    <FaCheckCircle
+                      className="text-xl drop-shadow-lg"
+                      style={{ color: "#22c55e" }}
+                    />
+                    <span className="text-white text-lg drop-shadow-lg font-medium">
+                      Garansi 5 tahun
+                    </span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <FaCheckCircle className="text-green-300 dark:text-green-200 text-xl" />
-                    <span className="text-white text-lg">Harga bersaing</span>
+                    <FaCheckCircle
+                      className="text-xl drop-shadow-lg"
+                      style={{ color: "#22c55e" }}
+                    />
+                    <span className="text-white text-lg drop-shadow-lg font-medium">
+                      Harga bersaing
+                    </span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <FaCheckCircle className="text-green-300 dark:text-green-200 text-xl" />
-                    <span className="text-white text-lg">Pengerjaan cepat</span>
+                    <FaCheckCircle
+                      className="text-xl drop-shadow-lg"
+                      style={{ color: "#22c55e" }}
+                    />
+                    <span className="text-white text-lg drop-shadow-lg font-medium">
+                      Pengerjaan cepat
+                    </span>
                   </div>
                 </div>
               </div>
@@ -356,7 +368,7 @@ export default function Home() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
           <div className="animate-bounce">
-            <FaMapMarkerAlt className="text-white text-2xl" />
+            <FaMapMarkerAlt className="text-white text-2xl drop-shadow-lg" />
           </div>
         </div>
       </section>
@@ -368,6 +380,8 @@ export default function Home() {
         style={{
           background:
             "linear-gradient(135deg, var(--muted) 0%, var(--secondary) 100%)",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
         }}
         aria-labelledby="services-heading"
       >
@@ -394,8 +408,11 @@ export default function Home() {
             aria-label="Daftar layanan konstruksi"
           >
             <article
-              className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group theme-transition"
-              style={{ backgroundColor: "var(--card)" }}
+              className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group theme-transition border"
+              style={{
+                backgroundColor: "var(--card)",
+                borderColor: "var(--border)",
+              }}
               role="listitem"
             >
               <div className="relative h-64 overflow-hidden">
@@ -451,8 +468,11 @@ export default function Home() {
             </article>
 
             <div
-              className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group theme-transition"
-              style={{ backgroundColor: "var(--card)" }}
+              className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group theme-transition border"
+              style={{
+                backgroundColor: "var(--card)",
+                borderColor: "var(--border)",
+              }}
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
@@ -506,8 +526,11 @@ export default function Home() {
             </div>
 
             <article
-              className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group theme-transition"
-              style={{ backgroundColor: "var(--card)" }}
+              className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group theme-transition border"
+              style={{
+                backgroundColor: "var(--card)",
+                borderColor: "var(--border)",
+              }}
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
@@ -569,7 +592,8 @@ export default function Home() {
         className="py-20 theme-transition"
         style={{
           background:
-            "linear-gradient(135deg, var(--muted) 0%, var(--secondary) 100%)",
+            "linear-gradient(135deg, var(--background) 0%, var(--muted) 100%)",
+          borderTop: "1px solid var(--border)",
         }}
       >
         <div className="container mx-auto px-4">
@@ -593,7 +617,11 @@ export default function Home() {
                 href="https://www.tiktok.com/@kontruksikandang"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-black text-white px-6 py-3 rounded-2xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+                className="text-white px-6 py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #ff0050 0%, #00f2ea 100%)",
+                }}
               >
                 <span className="text-2xl">🎵</span>
                 <span className="font-semibold">TikTok</span>
@@ -602,7 +630,11 @@ export default function Home() {
                 href="https://www.instagram.com/kontruksikandangayam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+                className="text-white px-6 py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+                }}
               >
                 <FaInstagram className="text-xl" />
                 <span className="font-semibold">Instagram</span>
@@ -613,8 +645,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Atap Rumah */}
             <div
-              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition"
-              style={{ backgroundColor: "var(--card)" }}
+              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition border"
+              style={{
+                backgroundColor: "var(--card)",
+                borderColor: "var(--border)",
+              }}
             >
               <div className="relative h-80 overflow-hidden">
                 <Image
@@ -666,8 +701,11 @@ export default function Home() {
 
             {/* Kandang Ayam */}
             <div
-              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition"
-              style={{ backgroundColor: "var(--card)" }}
+              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition border"
+              style={{
+                backgroundColor: "var(--card)",
+                borderColor: "var(--border)",
+              }}
             >
               <div className="relative h-80 overflow-hidden">
                 <Image
@@ -718,8 +756,11 @@ export default function Home() {
 
             {/* Gudang */}
             <div
-              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition"
-              style={{ backgroundColor: "var(--card)" }}
+              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition border"
+              style={{
+                backgroundColor: "var(--card)",
+                borderColor: "var(--border)",
+              }}
             >
               <div className="relative h-80 overflow-hidden">
                 <Image
@@ -771,8 +812,11 @@ export default function Home() {
 
             {/* Kandang Sapi */}
             <div
-              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition"
-              style={{ backgroundColor: "var(--card)" }}
+              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition border"
+              style={{
+                backgroundColor: "var(--card)",
+                borderColor: "var(--border)",
+              }}
             >
               <div className="relative h-80 overflow-hidden">
                 <Image
@@ -824,8 +868,11 @@ export default function Home() {
 
             {/* Workshop */}
             <div
-              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition"
-              style={{ backgroundColor: "var(--card)" }}
+              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition border"
+              style={{
+                backgroundColor: "var(--card)",
+                borderColor: "var(--border)",
+              }}
             >
               <div className="relative h-80 overflow-hidden">
                 <Image
@@ -877,8 +924,11 @@ export default function Home() {
 
             {/* Atap Masjid */}
             <div
-              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition"
-              style={{ backgroundColor: "var(--card)" }}
+              className="rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group theme-transition border"
+              style={{
+                backgroundColor: "var(--card)",
+                borderColor: "var(--border)",
+              }}
             >
               <div className="relative h-80 overflow-hidden">
                 <Image
@@ -934,7 +984,10 @@ export default function Home() {
               href="https://www.instagram.com/kontruksikandangayam"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-10 py-5 rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="inline-flex items-center space-x-3 text-white px-10 py-5 rounded-2xl transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              style={{
+                background: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+              }}
             >
               <FaInstagram className="text-2xl" />
               <span>Lihat Lebih Banyak di Instagram</span>
@@ -947,7 +1000,11 @@ export default function Home() {
       <section
         id="tentang"
         className="py-20 theme-transition"
-        style={{ backgroundColor: "var(--muted)" }}
+        style={{
+          backgroundColor: "var(--muted)",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
+        }}
       >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -1026,14 +1083,22 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-blue-600 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Keunggulan Kami</h3>
+            <div
+              className="rounded-2xl p-8 theme-transition border"
+              style={{
+                backgroundColor: "var(--primary-bg)",
+                borderColor: "var(--border)",
+              }}
+            >
+              <h3 className="text-2xl font-bold mb-6 text-white">
+                Keunggulan Kami
+              </h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <FaCheckCircle className="text-green-400 mt-1" />
                   <div>
-                    <h4 className="font-semibold">Tim Ahli</h4>
-                    <p className="text-blue-100">
+                    <h4 className="font-semibold text-white">Tim Ahli</h4>
+                    <p className="text-white opacity-90">
                       Tim teknisi berpengalaman dan bersertifikat
                     </p>
                   </div>
@@ -1041,8 +1106,10 @@ export default function Home() {
                 <div className="flex items-start space-x-3">
                   <FaCheckCircle className="text-green-400 mt-1" />
                   <div>
-                    <h4 className="font-semibold">Material Berkualitas</h4>
-                    <p className="text-blue-100">
+                    <h4 className="font-semibold text-white">
+                      Material Berkualitas
+                    </h4>
+                    <p className="text-white opacity-90">
                       Menggunakan material premium dengan garansi
                     </p>
                   </div>
@@ -1050,8 +1117,10 @@ export default function Home() {
                 <div className="flex items-start space-x-3">
                   <FaCheckCircle className="text-green-400 mt-1" />
                   <div>
-                    <h4 className="font-semibold">Pengerjaan Cepat</h4>
-                    <p className="text-blue-100">
+                    <h4 className="font-semibold text-white">
+                      Pengerjaan Cepat
+                    </h4>
+                    <p className="text-white opacity-90">
                       Waktu pengerjaan yang efisien tanpa mengorbankan kualitas
                     </p>
                   </div>
@@ -1059,8 +1128,10 @@ export default function Home() {
                 <div className="flex items-start space-x-3">
                   <FaCheckCircle className="text-green-400 mt-1" />
                   <div>
-                    <h4 className="font-semibold">Harga Transparan</h4>
-                    <p className="text-blue-100">
+                    <h4 className="font-semibold text-white">
+                      Harga Transparan
+                    </h4>
+                    <p className="text-white opacity-90">
                       Penawaran harga yang jelas tanpa biaya tersembunyi
                     </p>
                   </div>
@@ -1078,6 +1149,7 @@ export default function Home() {
         style={{
           background:
             "linear-gradient(135deg, var(--card) 0%, var(--muted) 100%)",
+          borderTop: "1px solid var(--border)",
         }}
       >
         <div className="container mx-auto px-4">
@@ -1235,11 +1307,21 @@ export default function Home() {
 
           {/* CTA Section */}
           <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-8 md:p-12 text-white">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            <div
+              className="rounded-3xl p-8 md:p-12 theme-transition"
+              style={{
+                background:
+                  "linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-bg) 100%)",
+                border: "1px solid var(--border)",
+              }}
+            >
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Siap Memulai Proyek Konstruksi Anda?
               </h3>
-              <p className="text-xl mb-8 text-blue-100">
+              <p
+                className="text-xl mb-8"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+              >
                 Dapatkan penawaran terbaik dan konsultasi gratis untuk proyek
                 konstruksi baja ringan Anda
               </p>
@@ -1248,7 +1330,7 @@ export default function Home() {
                   href="https://wa.me/62882001425081?text=Halo%20Natha%20Konstruksi%2C%20Saya%20ingin%20konsultasi%20untuk%20proyek%20konstruksi%20baja%20ringan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-green-500 text-white px-8 py-4 rounded-xl hover:bg-green-600 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2"
+                  className="px-8 py-4 rounded-xl transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white"
                 >
                   <FaWhatsapp className="text-2xl" />
                   <span>Konsultasi WhatsApp</span>
@@ -1269,7 +1351,11 @@ export default function Home() {
       <section
         id="faq"
         className="py-20 theme-transition"
-        style={{ backgroundColor: "var(--muted)" }}
+        style={{
+          backgroundColor: "var(--muted)",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
+        }}
         aria-labelledby="faq-heading"
       >
         <div className="container mx-auto px-4">
@@ -1292,8 +1378,11 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto space-y-6">
             <details
-              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-              style={{ border: "1px solid var(--border)" }}
+              className="group rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 theme-transition"
+              style={{
+                backgroundColor: "var(--card)",
+                border: "1px solid var(--border)",
+              }}
             >
               <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                 <h3
@@ -1302,7 +1391,10 @@ export default function Home() {
                 >
                   Berapa lama waktu pengerjaan atap rumah?
                 </h3>
-                <FaCheckCircle className="text-blue-600 text-xl group-open:rotate-180 transition-transform duration-300" />
+                <FaCheckCircle
+                  className="text-xl group-open:rotate-180 transition-transform duration-300"
+                  style={{ color: "var(--primary)" }}
+                />
               </summary>
               <div className="px-6 pb-6">
                 <p
@@ -1318,8 +1410,11 @@ export default function Home() {
             </details>
 
             <details
-              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-              style={{ border: "1px solid var(--border)" }}
+              className="group rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 theme-transition"
+              style={{
+                backgroundColor: "var(--card)",
+                border: "1px solid var(--border)",
+              }}
             >
               <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                 <h3
@@ -1328,7 +1423,10 @@ export default function Home() {
                 >
                   Berapa harga konstruksi baja ringan per meter?
                 </h3>
-                <FaCheckCircle className="text-blue-600 text-xl group-open:rotate-180 transition-transform duration-300" />
+                <FaCheckCircle
+                  className="text-xl group-open:rotate-180 transition-transform duration-300"
+                  style={{ color: "var(--primary)" }}
+                />
               </summary>
               <div className="px-6 pb-6">
                 <p
@@ -1344,8 +1442,11 @@ export default function Home() {
             </details>
 
             <details
-              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-              style={{ border: "1px solid var(--border)" }}
+              className="group rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 theme-transition"
+              style={{
+                backgroundColor: "var(--card)",
+                border: "1px solid var(--border)",
+              }}
             >
               <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                 <h3
@@ -1354,7 +1455,10 @@ export default function Home() {
                 >
                   Apakah baja ringan tahan lama dan anti karat?
                 </h3>
-                <FaCheckCircle className="text-blue-600 text-xl group-open:rotate-180 transition-transform duration-300" />
+                <FaCheckCircle
+                  className="text-xl group-open:rotate-180 transition-transform duration-300"
+                  style={{ color: "var(--primary)" }}
+                />
               </summary>
               <div className="px-6 pb-6">
                 <p
@@ -1370,8 +1474,11 @@ export default function Home() {
             </details>
 
             <details
-              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-              style={{ border: "1px solid var(--border)" }}
+              className="group rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 theme-transition"
+              style={{
+                backgroundColor: "var(--card)",
+                border: "1px solid var(--border)",
+              }}
             >
               <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                 <h3
@@ -1380,7 +1487,10 @@ export default function Home() {
                 >
                   Apakah Anda melayani area di luar Tasikmalaya?
                 </h3>
-                <FaCheckCircle className="text-blue-600 text-xl group-open:rotate-180 transition-transform duration-300" />
+                <FaCheckCircle
+                  className="text-xl group-open:rotate-180 transition-transform duration-300"
+                  style={{ color: "var(--primary)" }}
+                />
               </summary>
               <div className="px-6 pb-6">
                 <p
@@ -1395,8 +1505,11 @@ export default function Home() {
             </details>
 
             <details
-              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-              style={{ border: "1px solid var(--border)" }}
+              className="group rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 theme-transition"
+              style={{
+                backgroundColor: "var(--card)",
+                border: "1px solid var(--border)",
+              }}
             >
               <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                 <h3
@@ -1405,7 +1518,10 @@ export default function Home() {
                 >
                   Bagaimana proses pemesanan dan pengerjaan?
                 </h3>
-                <FaCheckCircle className="text-blue-600 text-xl group-open:rotate-180 transition-transform duration-300" />
+                <FaCheckCircle
+                  className="text-xl group-open:rotate-180 transition-transform duration-300"
+                  style={{ color: "var(--primary)" }}
+                />
               </summary>
               <div className="px-6 pb-6">
                 <p
@@ -1426,7 +1542,13 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="kontak"
-        className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 relative overflow-hidden"
+        className="py-20 relative overflow-hidden theme-transition"
+        style={{
+          background:
+            "linear-gradient(135deg, var(--muted) 0%, var(--secondary) 100%)",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
+        }}
       >
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -1441,15 +1563,34 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           {/* Header Section */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
-              <FaMapMarkerAlt className="text-blue-300 text-xl" />
-              <span className="text-blue-200 font-medium">Hubungi Kami</span>
+            <div
+              className="inline-flex items-center space-x-2 backdrop-blur-sm rounded-full px-6 py-3 mb-6 theme-transition"
+              style={{
+                backgroundColor: "rgba(var(--primary-bg-rgb), 0.1)",
+                border: "1px solid rgba(var(--primary-bg-rgb), 0.2)",
+              }}
+            >
+              <FaMapMarkerAlt
+                className="text-xl"
+                style={{ color: "var(--primary)" }}
+              />
+              <span className="font-medium" style={{ color: "var(--primary)" }}>
+                Hubungi Kami
+              </span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h2
+              className="text-4xl md:text-6xl font-bold mb-6 leading-tight theme-transition"
+              style={{ color: "var(--foreground)" }}
+            >
               Mari Diskusikan
-              <span className="block text-blue-300">Proyek Anda</span>
+              <span className="block" style={{ color: "var(--primary)" }}>
+                Proyek Anda
+              </span>
             </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p
+              className="text-xl max-w-3xl mx-auto leading-relaxed theme-transition"
+              style={{ color: "var(--muted-foreground)" }}
+            >
               Dapatkan penawaran terbaik untuk proyek konstruksi Anda. Tim kami
               siap membantu mewujudkan impian konstruksi Anda dengan kualitas
               terjamin.
@@ -1461,26 +1602,50 @@ export default function Home() {
             {/* Contact Information */}
             <div className="space-y-8">
               <div className="text-center lg:text-left">
-                <h3 className="text-3xl font-bold text-white mb-4">
+                <h3
+                  className="text-3xl font-bold mb-4 theme-transition"
+                  style={{ color: "var(--foreground)" }}
+                >
                   Informasi Kontak
                 </h3>
-                <p className="text-blue-200 text-lg">
+                <p
+                  className="text-lg theme-transition"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
                   Hubungi kami melalui berbagai saluran komunikasi
                 </p>
               </div>
 
               <div className="grid gap-6">
                 {/* Phone */}
-                <div className="group bg-white/5 backdrop-blur-sm rounded-3xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                <div
+                  className="group backdrop-blur-sm rounded-3xl p-6 border transition-all duration-300 hover:scale-105 theme-transition"
+                  style={{
+                    backgroundColor: "var(--card)",
+                    borderColor: "var(--border)",
+                  }}
+                >
                   <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-bg) 100%)",
+                      }}
+                    >
                       <FaPhone className="text-white text-2xl" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-white font-bold text-xl mb-1">
+                      <div
+                        className="font-bold text-xl mb-1 theme-transition"
+                        style={{ color: "var(--foreground)" }}
+                      >
                         Telepon
                       </div>
-                      <div className="text-blue-200 text-lg">
+                      <div
+                        className="text-lg theme-transition"
+                        style={{ color: "var(--muted-foreground)" }}
+                      >
                         +62 882-0014-2508
                       </div>
                     </div>
@@ -1488,16 +1653,34 @@ export default function Home() {
                 </div>
 
                 {/* WhatsApp */}
-                <div className="group bg-white/5 backdrop-blur-sm rounded-3xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                <div
+                  className="group backdrop-blur-sm rounded-3xl p-6 border transition-all duration-300 hover:scale-105 theme-transition"
+                  style={{
+                    backgroundColor: "var(--card)",
+                    borderColor: "var(--border)",
+                  }}
+                >
                   <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #22c55e 0%, #16a34a 100%)",
+                      }}
+                    >
                       <FaWhatsapp className="text-white text-2xl" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-white font-bold text-xl mb-1">
+                      <div
+                        className="font-bold text-xl mb-1 theme-transition"
+                        style={{ color: "var(--foreground)" }}
+                      >
                         WhatsApp
                       </div>
-                      <div className="text-blue-200 text-lg">
+                      <div
+                        className="text-lg theme-transition"
+                        style={{ color: "var(--muted-foreground)" }}
+                      >
                         +62 882-0014-2508
                       </div>
                     </div>
@@ -1505,18 +1688,37 @@ export default function Home() {
                 </div>
 
                 {/* Email */}
-                <div className="group bg-white/5 backdrop-blur-sm rounded-3xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                <div
+                  className="group backdrop-blur-sm rounded-3xl p-6 border transition-all duration-300 hover:scale-105 theme-transition"
+                  style={{
+                    backgroundColor: "var(--card)",
+                    borderColor: "var(--border)",
+                  }}
+                >
                   <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
+                      }}
+                    >
                       <FaEnvelope className="text-white text-2xl" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-white font-bold text-xl mb-1">
+                      <div
+                        className="font-bold text-xl mb-1 theme-transition"
+                        style={{ color: "var(--foreground)" }}
+                      >
                         Email
                       </div>
                       <a
                         href="mailto:kontruksiayam93@gmail.com"
-                        className="text-blue-200 hover:text-white transition-colors text-lg"
+                        className="transition-colors text-lg hover:text-foreground"
+                        style={{
+                          color: "var(--muted-foreground)",
+                          textDecoration: "none",
+                        }}
                       >
                         kontruksiayam93@gmail.com
                       </a>
@@ -1525,16 +1727,34 @@ export default function Home() {
                 </div>
 
                 {/* Address */}
-                <div className="group bg-white/5 backdrop-blur-sm rounded-3xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                <div
+                  className="group backdrop-blur-sm rounded-3xl p-6 border transition-all duration-300 hover:scale-105 theme-transition"
+                  style={{
+                    backgroundColor: "var(--card)",
+                    borderColor: "var(--border)",
+                  }}
+                >
                   <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
+                      }}
+                    >
                       <FaMapMarkerAlt className="text-white text-2xl" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-white font-bold text-xl mb-1">
+                      <div
+                        className="font-bold text-xl mb-1 theme-transition"
+                        style={{ color: "var(--foreground)" }}
+                      >
                         Alamat
                       </div>
-                      <div className="text-blue-200 text-lg">
+                      <div
+                        className="text-lg theme-transition"
+                        style={{ color: "var(--muted-foreground)" }}
+                      >
                         Jl. Raya Utama No. 123, Tasikmalaya
                       </div>
                     </div>
@@ -1557,7 +1777,11 @@ export default function Home() {
                     href="https://www.instagram.com/kontruksikandangayam"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="text-white p-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+                    }}
                   >
                     <FaInstagram className="text-2xl" />
                   </a>
@@ -1565,7 +1789,11 @@ export default function Home() {
                     href="https://www.tiktok.com/@kontruksikandang"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-black text-white p-4 rounded-2xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="text-white p-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #ff0050 0%, #00f2ea 100%)",
+                    }}
                   >
                     <span className="text-2xl">🎵</span>
                   </a>
@@ -1585,7 +1813,7 @@ export default function Home() {
                     href="https://www.google.com/maps?q=-7.166194444444444,108.17669444444444"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-3 bg-white text-blue-600 px-8 py-4 rounded-2xl hover:bg-gray-100 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="inline-flex items-center space-x-3 px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 theme-transition google-maps-btn"
                   >
                     <FaMapMarkerAlt />
                     <span>Buka di Google Maps</span>
@@ -1597,16 +1825,34 @@ export default function Home() {
             {/* Map Section */}
             <div className="space-y-6">
               <div className="text-center lg:text-left">
-                <h3 className="text-3xl font-bold text-white mb-4">
+                <h3
+                  className="text-3xl font-bold mb-4 theme-transition"
+                  style={{ color: "var(--foreground)" }}
+                >
                   Lokasi Kami
                 </h3>
-                <p className="text-blue-200 text-lg">
+                <p
+                  className="text-lg theme-transition"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
                   Kunjungi workshop kami di Tasikmalaya
                 </p>
               </div>
 
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <div className="p-4 bg-gradient-to-r from-blue-600 to-blue-700">
+              <div
+                className="rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 theme-transition border"
+                style={{
+                  backgroundColor: "var(--card)",
+                  borderColor: "var(--border)",
+                }}
+              >
+                <div
+                  className="p-4 theme-transition"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-bg) 100%)",
+                  }}
+                >
                   <div className="flex items-center space-x-2 text-white">
                     <FaMapMarkerAlt className="text-xl" />
                     <span className="font-semibold">
@@ -1632,47 +1878,68 @@ export default function Home() {
           {/* Contact Form Section */}
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h3
+                className="text-3xl md:text-4xl font-bold mb-4 theme-transition"
+                style={{ color: "var(--foreground)" }}
+              >
                 Kirim Pesan
               </h3>
-              <p className="text-blue-200 text-lg">
+              <p
+                className="text-lg theme-transition"
+                style={{ color: "var(--muted-foreground)" }}
+              >
                 Beritahu kami tentang proyek konstruksi Anda
               </p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
+            <div
+              className="backdrop-blur-sm rounded-3xl p-8 md:p-12 border shadow-2xl theme-transition"
+              style={{
+                backgroundColor: "var(--card)",
+                borderColor: "var(--border)",
+              }}
+            >
               <form className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-white font-bold mb-3 text-lg">
+                    <label
+                      className="block font-bold mb-3 text-lg theme-transition"
+                      style={{ color: "var(--foreground)" }}
+                    >
                       Nama Lengkap *
                     </label>
                     <input
                       type="text"
                       required
-                      className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white placeholder-blue-200 text-lg transition-all duration-300 backdrop-blur-sm"
+                      className="w-full px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:border-transparent text-lg transition-all duration-300 backdrop-blur-sm theme-transition form-input"
                       placeholder="Masukkan nama lengkap"
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-bold mb-3 text-lg">
+                    <label
+                      className="block font-bold mb-3 text-lg theme-transition"
+                      style={{ color: "var(--foreground)" }}
+                    >
                       Email *
                     </label>
                     <input
                       type="email"
                       required
-                      className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white placeholder-blue-200 text-lg transition-all duration-300 backdrop-blur-sm"
+                      className="w-full px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:border-transparent text-lg transition-all duration-300 backdrop-blur-sm theme-transition form-input"
                       placeholder="Masukkan email"
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-bold mb-3 text-lg">
+                    <label
+                      className="block font-bold mb-3 text-lg theme-transition"
+                      style={{ color: "var(--foreground)" }}
+                    >
                       Telepon *
                     </label>
                     <input
                       type="tel"
                       required
-                      className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white placeholder-blue-200 text-lg transition-all duration-300 backdrop-blur-sm"
+                      className="w-full px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:border-transparent text-lg transition-all duration-300 backdrop-blur-sm theme-transition form-input"
                       placeholder="Masukkan nomor telepon"
                     />
                   </div>
@@ -1680,38 +1947,44 @@ export default function Home() {
 
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-white font-bold mb-3 text-lg">
+                    <label
+                      className="block font-bold mb-3 text-lg theme-transition"
+                      style={{ color: "var(--foreground)" }}
+                    >
                       Jenis Layanan
                     </label>
-                    <select className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white text-lg transition-all duration-300 backdrop-blur-sm">
-                      <option value="" className="text-gray-800">
+                    <select className="w-full px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:border-transparent text-lg transition-all duration-300 backdrop-blur-sm theme-transition form-select">
+                      <option value="" style={{ color: "var(--foreground)" }}>
                         Pilih jenis layanan
                       </option>
-                      <option value="atap-rumah" className="text-gray-800">
-                        Atap Rumah
-                      </option>
-                      <option value="kandang-ternak" className="text-gray-800">
-                        Kandang Ternak
-                      </option>
-                      <option value="gudang" className="text-gray-800">
-                        Gudang & Workshop
-                      </option>
-                      <option value="komersial" className="text-gray-800">
+                      <option value="atap-rumah">Atap Rumah</option>
+                      <option value="kandang-ternak">Kandang Ternak</option>
+                      <option value="gudang">Gudang & Workshop</option>
+                      <option
+                        value="komersial"
+                        style={{ color: "var(--foreground)" }}
+                      >
                         Konstruksi Komersial
                       </option>
-                      <option value="masjid" className="text-gray-800">
+                      <option
+                        value="masjid"
+                        style={{ color: "var(--foreground)" }}
+                      >
                         Atap Masjid
                       </option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-white font-bold mb-3 text-lg">
+                    <label
+                      className="block font-bold mb-3 text-lg theme-transition"
+                      style={{ color: "var(--foreground)" }}
+                    >
                       Pesan *
                     </label>
                     <textarea
                       rows={8}
                       required
-                      className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white placeholder-blue-200 text-lg transition-all duration-300 resize-none backdrop-blur-sm"
+                      className="w-full px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:border-transparent text-lg transition-all duration-300 resize-none backdrop-blur-sm theme-transition form-textarea"
                       placeholder="Jelaskan detail kebutuhan konstruksi Anda..."
                     ></textarea>
                   </div>
@@ -1720,7 +1993,11 @@ export default function Home() {
                 <div className="md:col-span-2">
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-5 rounded-2xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="w-full text-white py-5 rounded-2xl transition-all duration-300 font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-bg) 100%)",
+                    }}
                   >
                     <span className="flex items-center justify-center space-x-3">
                       <FaEnvelope className="text-2xl" />
@@ -1735,7 +2012,14 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 relative overflow-hidden">
+      <footer
+        className="py-16 relative overflow-hidden theme-transition"
+        style={{
+          backgroundColor: "var(--muted)",
+          borderTop: "1px solid var(--border)",
+          color: "var(--card-foreground)",
+        }}
+      >
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
@@ -1763,12 +2047,18 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold text-xl">Natha Konstruksi</h3>
-                  <p className="text-sm text-gray-400">
+                  <p
+                    className="text-sm"
+                    style={{ color: "var(--muted-foreground)" }}
+                  >
                     Solusi Konstruksi Terpercaya
                   </p>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed">
+              <p
+                className="leading-relaxed"
+                style={{ color: "var(--muted-foreground)" }}
+              >
                 Spesialis konstruksi baja ringan dengan kualitas terjamin dan
                 harga bersaing. Berpengalaman lebih dari 10 tahun dalam bidang
                 konstruksi.
@@ -1777,20 +2067,23 @@ export default function Home() {
 
             <div>
               <h4 className="font-semibold mb-6 text-lg">Layanan</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li className="hover:text-white transition-colors cursor-pointer">
+              <ul
+                className="space-y-3"
+                style={{ color: "var(--muted-foreground)" }}
+              >
+                <li className="transition-colors cursor-pointer hover:text-foreground">
                   Atap Rumah
                 </li>
-                <li className="hover:text-white transition-colors cursor-pointer">
+                <li className="transition-colors cursor-pointer hover:text-foreground">
                   Kandang Ternak
                 </li>
-                <li className="hover:text-white transition-colors cursor-pointer">
+                <li className="transition-colors cursor-pointer hover:text-foreground">
                   Gudang & Workshop
                 </li>
-                <li className="hover:text-white transition-colors cursor-pointer">
+                <li className="transition-colors cursor-pointer hover:text-foreground">
                   Konstruksi Komersial
                 </li>
-                <li className="hover:text-white transition-colors cursor-pointer">
+                <li className="transition-colors cursor-pointer hover:text-foreground">
                   Atap Masjid
                 </li>
               </ul>
@@ -1798,20 +2091,23 @@ export default function Home() {
 
             <div>
               <h4 className="font-semibold mb-6 text-lg">Perusahaan</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li className="hover:text-white transition-colors cursor-pointer">
+              <ul
+                className="space-y-3"
+                style={{ color: "var(--muted-foreground)" }}
+              >
+                <li className="transition-colors cursor-pointer hover:text-foreground">
                   Tentang Kami
                 </li>
-                <li className="hover:text-white transition-colors cursor-pointer">
+                <li className="transition-colors cursor-pointer hover:text-foreground">
                   Tim Ahli
                 </li>
-                <li className="hover:text-white transition-colors cursor-pointer">
+                <li className="transition-colors cursor-pointer hover:text-foreground">
                   Proyek
                 </li>
-                <li className="hover:text-white transition-colors cursor-pointer">
+                <li className="transition-colors cursor-pointer hover:text-foreground">
                   Testimoni
                 </li>
-                <li className="hover:text-white transition-colors cursor-pointer">
+                <li className="transition-colors cursor-pointer hover:text-foreground">
                   Galeri
                 </li>
               </ul>
@@ -1819,51 +2115,67 @@ export default function Home() {
 
             <div>
               <h4 className="font-semibold mb-6 text-lg">Kontak</h4>
-              <ul className="space-y-3 text-gray-400">
+              <ul
+                className="space-y-3"
+                style={{ color: "var(--muted-foreground)" }}
+              >
                 <li className="flex items-center space-x-2">
-                  <FaPhone className="text-blue-400" />
-                  <span>+62 882-0014-2508</span>
+                  <FaPhone style={{ color: "var(--primary)" }} />
+                  <span style={{ color: "var(--muted-foreground)" }}>
+                    +62 882-0014-2508
+                  </span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <FaEnvelope className="text-blue-400" />
+                  <FaEnvelope style={{ color: "var(--primary)" }} />
                   <a
                     href="mailto:kontruksiayam93@gmail.com"
-                    className="hover:text-white transition-colors"
+                    className="transition-colors hover:text-foreground"
+                    style={{ color: "var(--muted-foreground)" }}
                   >
                     kontruksiayam93@gmail.com
                   </a>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <FaFacebook className="text-blue-400" />
+                  <FaFacebook style={{ color: "var(--primary)" }} />
                   <a
                     href="https://www.facebook.com/profile.php?id=61557044876692"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
+                    className="transition-colors hover:text-foreground"
+                    style={{ color: "var(--muted-foreground)" }}
                   >
                     Facebook
                   </a>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <FaInstagram className="text-blue-400" />
+                  <FaInstagram style={{ color: "var(--primary)" }} />
                   <a
                     href="https://www.instagram.com/kontruksikandangayam"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
+                    className="transition-colors hover:text-foreground"
+                    style={{ color: "var(--muted-foreground)" }}
                   >
                     @kontruksikandangayam
                   </a>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <FaMapMarkerAlt className="text-blue-400" />
-                  <span>Tasikmalaya</span>
+                  <FaMapMarkerAlt style={{ color: "var(--primary)" }} />
+                  <span style={{ color: "var(--muted-foreground)" }}>
+                    Tasikmalaya
+                  </span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+          <div
+            className="border-t mt-12 pt-8 text-center theme-transition"
+            style={{
+              borderColor: "var(--border)",
+              color: "var(--muted-foreground)",
+            }}
+          >
             <p>&copy; 2024 Natha Konstruksi. All rights reserved.</p>
             <p className="mt-2 text-sm">Dibuat dengan ❤️ untuk Indonesia</p>
           </div>

@@ -1,7 +1,7 @@
-@import "tailwindcss";
+@import "tailwindcss" all;
 
 :root {
-  /* Light mode colors - Enhanced contrast */
+  /* Light mode colors - Enhanced contrast and better readability */
   --background: #ffffff;
   --foreground: #0f172a;
   --card: #ffffff;
@@ -10,16 +10,18 @@
   --popover-foreground: #0f172a;
   --primary: #1d4ed8;
   --primary-foreground: #ffffff;
+  --primary-bg: #60a5fa;
+  --primary-bg-rgb: 96, 165, 250;
   --secondary: #f8fafc;
   --secondary-foreground: #0f172a;
   --muted: #f1f5f9;
-  --muted-foreground: #475569;
+  --muted-foreground: #64748b;
   --accent: #f1f5f9;
   --accent-foreground: #0f172a;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #cbd5e1;
-  --input: #cbd5e1;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
   --ring: #1d4ed8;
   --radius: 0.5rem;
   --chart-1: #1d4ed8;
@@ -33,11 +35,20 @@
   --foreground-rgb: 15, 23, 42;
   --card-rgb: 255, 255, 255;
   --card-foreground-rgb: 15, 23, 42;
-  --primary-rgb: 29, 78, 216;
+  --primary-rgb: 96, 165, 250;
   --secondary-rgb: 248, 250, 252;
   --muted-rgb: 241, 245, 249;
-  --muted-foreground-rgb: 71, 85, 105;
-  --border-rgb: 203, 213, 225;
+  --muted-foreground-rgb: 100, 116, 139;
+  --border-rgb: 226, 232, 240;
+
+  /* Overlay variables for light mode */
+  --overlay-color: #000000;
+  --overlay-opacity: 0.4;
+  --hero-overlay: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
 }
 
 @theme inline {
@@ -49,6 +60,7 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-bg: var(--primary-bg);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -65,21 +77,29 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-hero-overlay: var(--hero-overlay);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/* Dark mode colors - Enhanced contrast */
+/* Legacy dark mode class - kept for backward compatibility */
+.dark {
+  /* This is now handled by :root.dark with higher specificity */
+}
+
+/* System preference dark mode - Enhanced contrast */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --background: #020617;
     --foreground: #f8fafc;
     --card: #0f172a;
     --card-foreground: #f8fafc;
     --popover: #0f172a;
     --popover-foreground: #f8fafc;
-    --primary: #3b82f6;
+    --primary: #60a5fa;
     --primary-foreground: #ffffff;
+    --primary-bg: #1d4ed8;
+    --primary-bg-rgb: 29, 78, 216;
     --secondary: #1e293b;
     --secondary-foreground: #f1f5f9;
     --muted: #334155;
@@ -90,8 +110,8 @@
     --destructive-foreground: #ffffff;
     --border: #475569;
     --input: #475569;
-    --ring: #3b82f6;
-    --chart-1: #3b82f6;
+    --ring: #60a5fa;
+    --chart-1: #60a5fa;
     --chart-2: #8b5cf6;
     --chart-3: #ef4444;
     --chart-4: #22c55e;
@@ -102,51 +122,121 @@
     --foreground-rgb: 248, 250, 252;
     --card-rgb: 15, 23, 42;
     --card-foreground-rgb: 248, 250, 252;
-    --primary-rgb: 59, 130, 246;
+    --primary-rgb: 96, 165, 250;
     --secondary-rgb: 30, 41, 59;
     --muted-rgb: 51, 65, 85;
     --muted-foreground-rgb: 203, 213, 225;
     --border-rgb: 71, 85, 105;
+
+    /* Overlay variables for dark mode */
+    --overlay-color: #000000;
+    --overlay-opacity: 0.5;
+    --hero-overlay: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
   }
 }
 
-/* Manual dark mode class - Enhanced contrast */
-.dark {
-  --background: #020617;
-  --foreground: #f8fafc;
-  --card: #0f172a;
-  --card-foreground: #f8fafc;
-  --popover: #0f172a;
-  --popover-foreground: #f8fafc;
-  --primary: #3b82f6;
-  --primary-foreground: #ffffff;
-  --secondary: #1e293b;
-  --secondary-foreground: #f1f5f9;
-  --muted: #334155;
-  --muted-foreground: #cbd5e1;
-  --accent: #1e293b;
-  --accent-foreground: #f1f5f9;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #475569;
-  --input: #475569;
-  --ring: #3b82f6;
-  --chart-1: #3b82f6;
-  --chart-2: #8b5cf6;
-  --chart-3: #ef4444;
-  --chart-4: #22c55e;
-  --chart-5: #f97316;
+/* Manual light mode class - Force light mode with higher specificity */
+:root.light {
+  --background: #ffffff !important;
+  --foreground: #0f172a !important;
+  --card: #ffffff !important;
+  --card-foreground: #0f172a !important;
+  --popover: #ffffff !important;
+  --popover-foreground: #0f172a !important;
+  --primary: #1d4ed8 !important;
+  --primary-foreground: #ffffff !important;
+  --primary-bg: #60a5fa !important;
+  --primary-bg-rgb: 96, 165, 250 !important;
+  --secondary: #f8fafc !important;
+  --secondary-foreground: #0f172a !important;
+  --muted: #f1f5f9 !important;
+  --muted-foreground: #64748b !important;
+  --accent: #f1f5f9 !important;
+  --accent-foreground: #0f172a !important;
+  --destructive: #dc2626 !important;
+  --destructive-foreground: #ffffff !important;
+  --border: #e2e8f0 !important;
+  --input: #e2e8f0 !important;
+  --ring: #1d4ed8 !important;
+  --chart-1: #1d4ed8 !important;
+  --chart-2: #7c3aed !important;
+  --chart-3: #dc2626 !important;
+  --chart-4: #16a34a !important;
+  --chart-5: #ea580c !important;
 
   /* RGB values for opacity support */
-  --background-rgb: 2, 6, 23;
-  --foreground-rgb: 248, 250, 252;
-  --card-rgb: 15, 23, 42;
-  --card-foreground-rgb: 248, 250, 252;
-  --primary-rgb: 59, 130, 246;
-  --secondary-rgb: 30, 41, 59;
-  --muted-rgb: 51, 65, 85;
-  --muted-foreground-rgb: 203, 213, 225;
-  --border-rgb: 71, 85, 105;
+  --background-rgb: 255, 255, 255 !important;
+  --foreground-rgb: 15, 23, 42 !important;
+  --card-rgb: 255, 255, 255 !important;
+  --card-foreground-rgb: 15, 23, 42 !important;
+  --primary-rgb: 96, 165, 250 !important;
+  --secondary-rgb: 248, 250, 252 !important;
+  --muted-rgb: 241, 245, 249 !important;
+  --muted-foreground-rgb: 100, 116, 139 !important;
+  --border-rgb: 226, 232, 240 !important;
+
+  /* Overlay variables for light mode */
+  --overlay-color: #000000 !important;
+  --overlay-opacity: 0.4 !important;
+  --hero-overlay: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  ) !important;
+}
+
+/* Manual dark mode class - Force dark mode with higher specificity */
+:root.dark {
+  --background: #020617 !important;
+  --foreground: #f8fafc !important;
+  --card: #0f172a !important;
+  --card-foreground: #f8fafc !important;
+  --popover: #0f172a !important;
+  --popover-foreground: #f8fafc !important;
+  --primary: #60a5fa !important;
+  --primary-foreground: #ffffff !important;
+  --primary-bg: #1d4ed8 !important;
+  --primary-bg-rgb: 29, 78, 216 !important;
+  --secondary: #1e293b !important;
+  --secondary-foreground: #f1f5f9 !important;
+  --muted: #334155 !important;
+  --muted-foreground: #cbd5e1 !important;
+  --accent: #1e293b !important;
+  --accent-foreground: #f1f5f9 !important;
+  --destructive: #ef4444 !important;
+  --destructive-foreground: #ffffff !important;
+  --border: #475569 !important;
+  --input: #475569 !important;
+  --ring: #60a5fa !important;
+  --chart-1: #60a5fa !important;
+  --chart-2: #8b5cf6 !important;
+  --chart-3: #ef4444 !important;
+  --chart-4: #22c55e !important;
+  --chart-5: #f97316 !important;
+
+  /* RGB values for opacity support */
+  --background-rgb: 2, 6, 23 !important;
+  --foreground-rgb: 248, 250, 252 !important;
+  --card-rgb: 15, 23, 42 !important;
+  --card-foreground-rgb: 248, 250, 252 !important;
+  --primary-rgb: 96, 165, 250 !important;
+  --secondary-rgb: 30, 41, 59 !important;
+  --muted-rgb: 51, 65, 85 !important;
+  --muted-foreground-rgb: 203, 213, 225 !important;
+  --border-rgb: 71, 85, 105 !important;
+
+  /* Overlay variables for dark mode */
+  --overlay-color: #000000 !important;
+  --overlay-opacity: 0.5 !important;
+  --hero-overlay: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  ) !important;
 }
 
 /* Base styles */
@@ -167,41 +257,21 @@ body {
     color 0.3s ease;
 }
 
-/* Custom scrollbar for dark mode */
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--muted);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--muted-foreground);
-  }
-}
-
-/* Dark mode scrollbar */
-.dark ::-webkit-scrollbar {
+/* Custom scrollbar for light mode */
+::-webkit-scrollbar {
   width: 8px;
 }
 
-.dark ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: var(--muted);
 }
 
-.dark ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 4px;
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: var(--muted-foreground);
 }
 
@@ -215,6 +285,33 @@ body {
 ::selection {
   background: var(--primary);
   color: var(--primary-foreground);
+}
+
+/* Light mode cards and containers */
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.container-light {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.container-muted {
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 /* Custom utility classes for dark mode */
@@ -238,6 +335,81 @@ body {
   color: var(--muted-foreground);
 }
 
+.bg-primary-bg {
+  background-color: var(--primary-bg);
+}
+
+/* Google Maps Button Hover Effects */
+.google-maps-btn {
+  background-color: var(--card);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.google-maps-btn:hover {
+  background-color: var(--muted);
+  color: var(--primary-bg);
+  transform: scale(1.05);
+}
+
+/* Form Textarea Styling */
+.form-textarea {
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  transition: all 0.3s ease;
+}
+
+.form-textarea:focus {
+  background-color: var(--card);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+}
+
+.form-textarea::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.7;
+}
+
+/* Form Input Styling */
+.form-input {
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  background-color: var(--card);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.7;
+}
+
+/* Form Select Styling */
+.form-select {
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  transition: all 0.3s ease;
+}
+
+.form-select:focus {
+  background-color: var(--card);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+}
+
+.form-select option {
+  background-color: var(--card);
+  color: var(--foreground);
+}
+
 .bg-accent {
   background-color: var(--accent);
 }
@@ -259,6 +431,67 @@ body {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Light mode shadows and effects */
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Light mode buttons and interactive elements */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+  border-color: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(29, 78, 216, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--muted);
+  border-color: var(--muted-foreground);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--foreground);
+  border: 2px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--muted);
+  border-color: var(--muted-foreground);
+  transform: translateY(-1px);
+}
+
 /* Enhanced contrast utilities */
 .text-high-contrast {
   color: var(--foreground);
@@ -276,102 +509,186 @@ body {
   background-color: var(--muted);
 }
 
-/* Section backgrounds with better contrast */
+/* High contrast blue backgrounds */
+.bg-blue-high-contrast {
+  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+}
+
+.bg-blue-medium-contrast {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.bg-blue-light-contrast {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+/* High contrast text for blue backgrounds */
+.text-on-blue {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-on-blue-light {
+  color: #f8fafc;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.text-on-blue-muted {
+  color: #e2e8f0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode gradients and backgrounds */
 .section-light {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
 .section-dark {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
 }
 
-.dark .section-light {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+.gradient-light {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
 }
 
-.dark .section-dark {
-  background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+.gradient-muted {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
 }
 
-/* Override Tailwind classes for better dark mode support */
-.dark .bg-white {
+/* Light mode specific styles */
+.bg-white {
   background-color: var(--card);
 }
 
-.dark .text-gray-900,
-.dark .text-slate-900 {
+.text-gray-900,
+.text-slate-900 {
   color: var(--foreground);
 }
 
-.dark .text-gray-600,
-.dark .text-slate-600 {
+.text-gray-600,
+.text-slate-600 {
   color: var(--muted-foreground);
 }
 
-.dark .text-gray-700,
-.dark .text-slate-700 {
+.text-gray-700,
+.text-slate-700 {
   color: var(--muted-foreground);
 }
 
-.dark .text-gray-800,
-.dark .text-slate-800 {
+.text-gray-800,
+.text-slate-800 {
   color: var(--foreground);
 }
 
-.dark .bg-gray-50,
-.dark .bg-slate-50 {
+.bg-gray-50,
+.bg-slate-50 {
   background-color: var(--muted);
 }
 
-.dark .bg-gray-100,
-.dark .bg-slate-100 {
+.bg-gray-100,
+.bg-slate-100 {
   background-color: var(--secondary);
 }
 
-.dark .bg-gray-200,
-.dark .bg-slate-200 {
+.bg-gray-200,
+.bg-slate-200 {
   background-color: var(--border);
 }
 
-.dark .border-gray-200,
-.dark .border-slate-200 {
+.border-gray-200,
+.border-slate-200 {
   border-color: var(--border);
 }
 
-.dark .border-gray-300,
-.dark .border-slate-300 {
+.border-gray-300,
+.border-slate-300 {
   border-color: var(--border);
 }
 
-/* Ensure proper contrast for all text elements */
-.dark h1,
-.dark h2,
-.dark h3,
-.dark h4,
-.dark h5,
-.dark h6 {
+/* Light mode text elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--foreground);
 }
 
-.dark p,
-.dark span,
-.dark div {
+p,
+span,
+div {
   color: inherit;
 }
 
-/* Override specific component backgrounds */
-.dark .bg-white\/95 {
-  background-color: rgba(15, 23, 42, 0.95);
+/* Light mode component backgrounds */
+.bg-white\/95 {
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
-.dark .bg-white\/10 {
-  background-color: rgba(15, 23, 42, 0.1);
+.bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.dark .bg-white\/20 {
-  background-color: rgba(15, 23, 42, 0.2);
+.bg-white\/20 {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.dark .bg-white\/5 {
-  background-color: rgba(15, 23, 42, 0.05);
+.bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* High contrast overlays */
+.bg-overlay-high {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bg-overlay-medium {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bg-overlay-light {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bg-overlay-blue {
+  background: linear-gradient(
+    135deg,
+    rgba(29, 78, 216, 0.9) 0%,
+    rgba(30, 64, 175, 0.9) 100%
+  );
+}
+
+.bg-overlay-blue-light {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.8) 0%,
+    rgba(37, 99, 235, 0.8) 100%
+  );
+}
+
+/* Light mode overlay adjustments */
+.light-mode-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Hero section overlay for better light mode visibility */
+.hero-overlay-light {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.hero-overlay-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
 }

@@ -178,7 +178,13 @@ export default function MobileMenu() {
                     className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 group theme-transition"
                     style={{ backgroundColor: "var(--card)" }}
                   >
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-bg) 100%)",
+                      }}
+                    >
                       <span className="text-white font-bold text-sm sm:text-lg">
                         🏠
                       </span>
@@ -197,7 +203,13 @@ export default function MobileMenu() {
                     className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 group theme-transition"
                     style={{ backgroundColor: "var(--card)" }}
                   >
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #22c55e 0%, #16a34a 100%)",
+                      }}
+                    >
                       <span className="text-white font-bold text-sm sm:text-lg">
                         🔧
                       </span>
@@ -216,7 +228,13 @@ export default function MobileMenu() {
                     className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 group theme-transition"
                     style={{ backgroundColor: "var(--card)" }}
                   >
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
+                      }}
+                    >
                       <span className="text-white font-bold text-sm sm:text-lg">
                         📸
                       </span>
@@ -235,7 +253,13 @@ export default function MobileMenu() {
                     className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 group theme-transition"
                     style={{ backgroundColor: "var(--card)" }}
                   >
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",
+                      }}
+                    >
                       <span className="text-white font-bold text-sm sm:text-lg">
                         ℹ️
                       </span>
@@ -254,7 +278,13 @@ export default function MobileMenu() {
                     className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 group theme-transition"
                     style={{ backgroundColor: "var(--card)" }}
                   >
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #eab308 0%, #ca8a04 100%)",
+                      }}
+                    >
                       <span className="text-white font-bold text-sm sm:text-lg">
                         ⭐
                       </span>
@@ -334,7 +364,11 @@ export default function MobileMenu() {
                     href="https://www.instagram.com/kontruksikandangayam"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
+                    className="text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+                    }}
                   >
                     <FaInstagram className="text-lg sm:text-2xl" />
                   </a>
@@ -342,7 +376,11 @@ export default function MobileMenu() {
                     href="https://www.tiktok.com/@kontruksikandang"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-black text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
+                    className="text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #ff0050 0%, #00f2ea 100%)",
+                    }}
                   >
                     <span className="text-lg sm:text-2xl">🎵</span>
                   </a>
@@ -360,7 +398,11 @@ export default function MobileMenu() {
                 <a
                   href="#layanan"
                   onClick={() => scrollToSection("layanan")}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-sm sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2"
+                  className="w-full text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 font-bold text-sm sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-bg) 100%)",
+                  }}
                 >
                   <span>🔧</span>
                   <span>Lihat Layanan</span>
@@ -377,7 +419,10 @@ export default function MobileMenu() {
               >
                 <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center space-x-2 sm:space-x-3">
-                    <FaPhone className="text-blue-600 text-sm sm:text-lg" />
+                    <FaPhone
+                      className="text-sm sm:text-lg"
+                      style={{ color: "var(--primary)" }}
+                    />
                     <span
                       className="text-xs sm:text-sm theme-transition"
                       style={{ color: "var(--muted-foreground)" }}
@@ -386,7 +431,10 @@ export default function MobileMenu() {
                     </span>
                   </div>
                   <div className="flex items-center space-x-2 sm:space-x-3">
-                    <FaMapMarkerAlt className="text-red-600 text-sm sm:text-lg" />
+                    <FaMapMarkerAlt
+                      className="text-sm sm:text-lg"
+                      style={{ color: "#ef4444" }}
+                    />
                     <span
                       className="text-xs sm:text-sm theme-transition"
                       style={{ color: "var(--muted-foreground)" }}

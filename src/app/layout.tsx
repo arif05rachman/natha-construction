@@ -140,10 +140,20 @@ export default function RootLayout({
                   var theme = localStorage.getItem('theme');
                   var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                   
-                  if (theme === 'dark' || (!theme && systemPrefersDark)) {
-                    document.documentElement.classList.add('dark');
+                  // If no saved theme, use system preference
+                  if (!theme) {
+                    if (systemPrefersDark) {
+                      document.documentElement.classList.add('dark');
+                    } else {
+                      document.documentElement.classList.remove('dark');
+                    }
                   } else {
-                    document.documentElement.classList.remove('dark');
+                    // Use saved theme
+                    if (theme === 'dark') {
+                      document.documentElement.classList.add('dark');
+                    } else {
+                      document.documentElement.classList.remove('dark');
+                    }
                   }
                 } catch (e) {}
               })();
@@ -366,30 +376,7 @@ export default function RootLayout({
             }),
           }}
         />
-        {/* Structured Data for Breadcrumb */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Beranda",
-                  item: "https://natha-konstruksi.com/#beranda",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Konstruksi Baja Ringan",
-                  item: "https://natha-konstruksi.com/",
-                },
-              ],
-            }),
-          }}
-        />
+
         {/* Structured Data for WebSite */}
         <script
           type="application/ld+json"
@@ -600,6 +587,16 @@ export default function RootLayout({
         />
         <meta name="color-scheme" content="light dark" />
         <meta name="supported-color-schemes" content="light dark" />
+        <meta
+          name="theme-color"
+          content="#2563eb"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#1e40af"
+          media="(prefers-color-scheme: dark)"
+        />
 
         {/* Performance Monitoring */}
         <meta name="web_analytics" content="google-analytics" />
@@ -1284,6 +1281,39 @@ export default function RootLayout({
           content="kontruksiayam93@gmail.com"
         />
         <meta name="service:website" content="https://natha-konstruksi.com" />
+
+        {/* Theme Detection Script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function getInitialTheme() {
+                  const savedTheme = localStorage.getItem('theme');
+                  if (savedTheme) {
+                    return savedTheme;
+                  }
+                  
+                  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  return systemPrefersDark ? 'dark' : 'light';
+                }
+                
+                function applyTheme(theme) {
+                  const isDark = theme === 'dark';
+                  
+                  if (isDark) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                }
+                
+                // Apply initial theme
+                const initialTheme = getInitialTheme();
+                applyTheme(initialTheme);
+              })();
+            `,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased theme-transition`}
