@@ -101,34 +101,10 @@
       ]
     },
     {
-      "name": "WhatsApp",
-      "short_name": "WA",
-      "description": "Konsultasi via WhatsApp",
-      "url": "https://wa.me/62882001425081",
-      "icons": [
-        {
-          "src": "/favicon-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
       "name": "FAQ",
       "short_name": "FAQ",
       "description": "Pertanyaan Umum",
       "url": "/#faq",
-      "icons": [
-        {
-          "src": "/favicon-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "TikTok",
-      "short_name": "TikTok",
-      "description": "Follow kami di TikTok",
-      "url": "https://www.tiktok.com/@kontruksikandang",
       "icons": [
         {
           "src": "/favicon-96x96.png",

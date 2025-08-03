@@ -622,14 +622,7 @@ export default function RootLayout({
         <meta name="format-detection" content="address=no" />
         <meta name="format-detection" content="email=no" />
 
-        {/* Security Headers */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta
-          httpEquiv="Referrer-Policy"
-          content="strict-origin-when-cross-origin"
-        />
+        {/* Security Headers - Now handled by Next.js config */}
 
         {/* Cache Control */}
         <meta
@@ -920,15 +913,10 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Natha Konstruksi" />
 
         {/* Preload Critical Resources */}
-        <link rel="preload" href="/images/hero-1.jpg" as="image" />
-        <link rel="preload" href="/logo.webp" as="image" />
-        <link rel="preload" href="/globals.css" as="style" />
-        <link
-          rel="preload"
-          href="/images/hero-video.mp4"
-          as="video"
-          type="video/mp4"
-        />
+        {/* Hero image preload removed - video poster and fallback image handle this */}
+        {/* Logo preload removed - Next.js Image with priority handles this automatically */}
+        {/* CSS preload removed - Next.js handles CSS loading automatically */}
+        {/* Video preload removed - not supported in all browsers */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
@@ -1253,22 +1241,7 @@ export default function RootLayout({
         />
         <meta httpEquiv="ETag" content='"natha-konstruksi-v1.0"' />
 
-        {/* Security Headers - Additional */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta
-          httpEquiv="Referrer-Policy"
-          content="strict-origin-when-cross-origin"
-        />
-        <meta
-          httpEquiv="Permissions-Policy"
-          content="camera=(), microphone=(), geolocation=()"
-        />
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';"
-        />
+        {/* Security Headers - Now handled by Next.js config */}
 
         {/* Accessibility - Additional */}
         <meta name="accessibility-control" content="full-keyboard" />
