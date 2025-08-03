@@ -1,0 +1,86 @@
+{
+  "name": "Natha Konstruksi - Jasa Konstruksi Baja Ringan Terpercaya",
+  "short_name": "Natha Konstruksi",
+  "description": "Spesialis konstruksi baja ringan untuk atap rumah, kandang ternak, gudang, dan workshop. Kualitas terjamin, harga bersaing. Harga mulai Rp 150.000/m². Garansi 5 tahun.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "id",
+  "categories": ["business", "construction"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/hero-1.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Natha Konstruksi - Konstruksi Baja Ringan"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Hubungi Kami",
+      "short_name": "Kontak",
+      "description": "Hubungi Natha Konstruksi untuk konsultasi",
+      "url": "/#kontak",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Layanan",
+      "short_name": "Layanan",
+      "description": "Lihat layanan konstruksi baja ringan kami",
+      "url": "/#layanan",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "WhatsApp",
+      "short_name": "WA",
+      "description": "Konsultasi via WhatsApp",
+      "url": "https://wa.me/62882001425081",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "FAQ",
+      "short_name": "FAQ",
+      "description": "Pertanyaan Umum",
+      "url": "/#faq",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+} 

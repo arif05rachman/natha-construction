@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://natha-konstruksi.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important pages
+Allow: /images/
+Allow: /public/
+
+# Block unnecessary files
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+
+# Allow important resources
+Allow: /images/
+Allow: /public/
+Allow: /favicon.ico
+Allow: /logo.png
+Allow: /manifest.json
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Crawl delay for better performance
+Crawl-delay: 0.5 

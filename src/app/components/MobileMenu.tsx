@@ -268,6 +268,25 @@ export default function MobileMenu() {
                   </a>
 
                   <a
+                    href="#faq"
+                    onClick={() => scrollToSection("faq")}
+                    className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 group theme-transition"
+                    style={{ backgroundColor: "var(--card)" }}
+                  >
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-sm sm:text-lg">
+                        ❓
+                      </span>
+                    </div>
+                    <span
+                      className="font-semibold text-sm sm:text-lg theme-transition"
+                      style={{ color: "var(--foreground)" }}
+                    >
+                      FAQ
+                    </span>
+                  </a>
+
+                  <a
                     href="#kontak"
                     onClick={() => scrollToSection("kontak")}
                     className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 group theme-transition"

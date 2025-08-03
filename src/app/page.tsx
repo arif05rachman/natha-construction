@@ -17,14 +17,22 @@ import ThemeToggle from "./components/ThemeToggle";
 
 export default function Home() {
   return (
-    <div
+    <main
       className="min-h-screen theme-transition"
       style={{ backgroundColor: "var(--background)" }}
     >
+      {/* Skip to main content for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-lg z-50"
+      >
+        Skip to main content
+      </a>
       {/* Header */}
       <header
         className="backdrop-blur-md shadow-lg fixed w-full top-0 z-50 transition-all duration-300 theme-transition"
         style={{ backgroundColor: "var(--card)", opacity: 0.95 }}
+        role="banner"
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
@@ -32,10 +40,12 @@ export default function Home() {
               <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
                 <Image
                   src="/logo.png"
-                  alt="Natha Konstruksi Logo"
+                  alt="Natha Konstruksi Logo - Jasa Konstruksi Baja Ringan"
                   width={48}
                   height={48}
                   className="w-full h-full object-cover"
+                  priority
+                  quality={95}
                 />
               </div>
               <div>
@@ -55,7 +65,11 @@ export default function Home() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex space-x-8">
+            <nav
+              className="hidden lg:flex space-x-8"
+              role="navigation"
+              aria-label="Main navigation"
+            >
               <a
                 href="#beranda"
                 className="theme-transition font-medium relative group"
@@ -106,6 +120,17 @@ export default function Home() {
                 style={{ color: "var(--muted-foreground)" }}
               >
                 Testimoni
+                <span
+                  className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
+                  style={{ backgroundColor: "var(--primary)" }}
+                ></span>
+              </a>
+              <a
+                href="#faq"
+                className="theme-transition font-medium relative group"
+                style={{ color: "var(--muted-foreground)" }}
+              >
+                FAQ
                 <span
                   className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
                   style={{ backgroundColor: "var(--primary)" }}
@@ -163,10 +188,39 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Breadcrumb Navigation */}
+      <nav
+        className="pt-20 pb-4 px-4"
+        aria-label="Breadcrumb"
+        style={{ backgroundColor: "var(--background)" }}
+      >
+        <div className="container mx-auto">
+          <ol className="flex items-center space-x-2 text-sm">
+            <li>
+              <a
+                href="#beranda"
+                className="theme-transition hover:text-blue-600"
+                style={{ color: "var(--muted-foreground)" }}
+              >
+                Beranda
+              </a>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li
+              className="theme-transition"
+              style={{ color: "var(--foreground)" }}
+            >
+              Konstruksi Baja Ringan
+            </li>
+          </ol>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section
         id="beranda"
         className="relative pt-20 min-h-screen flex items-center justify-center overflow-hidden"
+        aria-labelledby="hero-heading"
       >
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
@@ -176,26 +230,54 @@ export default function Home() {
             muted
             playsInline
             className="w-full h-full object-cover"
+            preload="metadata"
+            poster="/images/hero-1.jpg"
           >
             <source src="/images/hero-video.mp4" type="video/mp4" />
+            <source src="/images/hero-video.webm" type="video/webm" />
+            {/* Fallback for browsers that don't support video */}
+            <img src="/images/hero-1.jpg" alt="Natha Konstruksi Hero Image" className="w-full h-full object-cover" />
           </video>
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
         </div>
 
-        <div className="container mx-auto px-4 py-20 relative z-10">
+        <div id="main-content" className="container mx-auto px-4 py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1
+                id="hero-heading"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+              >
                 Konstruksi Baja Ringan
                 <span className="text-blue-300 dark:text-blue-200 block">
                   Terpercaya & Berkualitas
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-200 dark:text-slate-100 mb-8 max-w-2xl mx-auto lg:mx-0">
-                Spesialis konstruksi baja ringan untuk atap rumah, kandang
-                ternak, dan berbagai kebutuhan konstruksi lainnya. Kualitas
-                terjamin dengan harga yang bersaing.
+                Spesialis konstruksi baja ringan untuk{" "}
+                <a
+                  href="#layanan"
+                  className="text-blue-300 hover:text-blue-200 underline"
+                >
+                  atap rumah
+                </a>
+                ,{" "}
+                <a
+                  href="#layanan"
+                  className="text-blue-300 hover:text-blue-200 underline"
+                >
+                  kandang ternak
+                </a>
+                , dan berbagai kebutuhan konstruksi lainnya. Kualitas terjamin
+                dengan harga yang bersaing. Lihat{" "}
+                <a
+                  href="#galeri"
+                  className="text-blue-300 hover:text-blue-200 underline"
+                >
+                  portfolio pekerjaan kami
+                </a>
+                .
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
@@ -258,10 +340,12 @@ export default function Home() {
           background:
             "linear-gradient(135deg, var(--muted) 0%, var(--secondary) 100%)",
         }}
+        aria-labelledby="services-heading"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2
+              id="services-heading"
               className="text-4xl md:text-5xl font-bold mb-4 theme-transition"
               style={{ color: "var(--foreground)" }}
             >
@@ -275,17 +359,25 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div
+          <div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            role="list"
+            aria-label="Daftar layanan konstruksi"
+          >
+            <article
               className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group theme-transition"
               style={{ backgroundColor: "var(--card)" }}
+              role="listitem"
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="/images/atap-rumah.jpg"
-                  alt="Atap Rumah"
+                  alt="Atap Rumah - Konstruksi baja ringan untuk atap rumah modern"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4">
@@ -327,7 +419,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-            </div>
+            </article>
 
             <div
               className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group theme-transition"
@@ -336,9 +428,12 @@ export default function Home() {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="/images/kandang-ayam.jpg"
-                  alt="Kandang Ayam"
+                  alt="Kandang Ayam - Konstruksi kandang ternak dengan baja ringan"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={85}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4">
@@ -381,16 +476,19 @@ export default function Home() {
               </div>
             </div>
 
-            <div
+            <article
               className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group theme-transition"
               style={{ backgroundColor: "var(--card)" }}
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="/images/gudang.jpg"
-                  alt="Gudang & Workshop"
+                  alt="Gudang & Workshop - Konstruksi bangunan komersial dengan baja ringan"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={85}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4">
@@ -431,7 +529,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -470,9 +568,12 @@ export default function Home() {
               <div className="relative h-80 overflow-hidden">
                 <Image
                   src="/images/atap-rumah.jpg"
-                  alt="Atap Rumah Modern"
+                  alt="Atap Rumah Modern - Konstruksi baja ringan untuk atap rumah"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={80}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -520,9 +621,12 @@ export default function Home() {
               <div className="relative h-80 overflow-hidden">
                 <Image
                   src="/images/kandang-ayam.jpg"
-                  alt="Kandang Ayam Petelur"
+                  alt="Kandang Ayam Petelur - Konstruksi kandang ternak dengan baja ringan"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={80}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -569,9 +673,12 @@ export default function Home() {
               <div className="relative h-80 overflow-hidden">
                 <Image
                   src="/images/gudang.jpg"
-                  alt="Gudang Komersial"
+                  alt="Gudang Komersial - Konstruksi bangunan komersial dengan baja ringan"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={80}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -619,9 +726,12 @@ export default function Home() {
               <div className="relative h-80 overflow-hidden">
                 <Image
                   src="/images/kandang-sapi.jpg"
-                  alt="Kandang Sapi Potong"
+                  alt="Kandang Sapi Potong - Konstruksi kandang ternak dengan baja ringan"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={80}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -669,9 +779,12 @@ export default function Home() {
               <div className="relative h-80 overflow-hidden">
                 <Image
                   src="/images/workshop.jpg"
-                  alt="Workshop Industri"
+                  alt="Workshop Industri - Konstruksi workshop dengan baja ringan"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={80}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -719,9 +832,12 @@ export default function Home() {
               <div className="relative h-80 overflow-hidden">
                 <Image
                   src="/images/atap-masjid.jpg"
-                  alt="Atap Masjid Modern"
+                  alt="Atap Masjid Modern - Konstruksi atap masjid dengan baja ringan"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={80}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -1065,6 +1181,194 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* CTA Section */}
+          <div className="text-center mt-16">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-8 md:p-12 text-white">
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                Siap Memulai Proyek Konstruksi Anda?
+              </h3>
+              <p className="text-xl mb-8 text-blue-100">
+                Dapatkan penawaran terbaik dan konsultasi gratis untuk proyek
+                konstruksi baja ringan Anda
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://wa.me/62882001425081?text=Halo%20Natha%20Konstruksi%2C%20Saya%20ingin%20konsultasi%20untuk%20proyek%20konstruksi%20baja%20ringan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 text-white px-8 py-4 rounded-xl hover:bg-green-600 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2"
+                >
+                  <FaWhatsapp className="text-2xl" />
+                  <span>Konsultasi WhatsApp</span>
+                </a>
+                <a
+                  href="#kontak"
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 font-semibold text-lg"
+                >
+                  Hubungi Kami
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section
+        id="faq"
+        className="py-20 theme-transition"
+        style={{ backgroundColor: "var(--muted)" }}
+        aria-labelledby="faq-heading"
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2
+              id="faq-heading"
+              className="text-4xl md:text-5xl font-bold mb-4 theme-transition"
+              style={{ color: "var(--foreground)" }}
+            >
+              Pertanyaan Umum
+            </h2>
+            <p
+              className="text-xl max-w-3xl mx-auto theme-transition"
+              style={{ color: "var(--muted-foreground)" }}
+            >
+              Jawaban untuk pertanyaan yang sering diajukan tentang layanan
+              konstruksi baja ringan kami
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            <details
+              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              style={{ border: "1px solid var(--border)" }}
+            >
+              <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3
+                  className="text-xl font-semibold theme-transition"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  Berapa lama waktu pengerjaan atap rumah?
+                </h3>
+                <FaCheckCircle className="text-blue-600 text-xl group-open:rotate-180 transition-transform duration-300" />
+              </summary>
+              <div className="px-6 pb-6">
+                <p
+                  className="text-lg leading-relaxed theme-transition"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
+                  Waktu pengerjaan atap rumah dengan baja ringan biasanya
+                  memakan waktu 3-7 hari tergantung luas dan kompleksitas
+                  konstruksi. Untuk rumah standar 100m², pengerjaan dapat
+                  selesai dalam 4-5 hari.
+                </p>
+              </div>
+            </details>
+
+            <details
+              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              style={{ border: "1px solid var(--border)" }}
+            >
+              <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3
+                  className="text-xl font-semibold theme-transition"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  Berapa harga konstruksi baja ringan per meter?
+                </h3>
+                <FaCheckCircle className="text-blue-600 text-xl group-open:rotate-180 transition-transform duration-300" />
+              </summary>
+              <div className="px-6 pb-6">
+                <p
+                  className="text-lg leading-relaxed theme-transition"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
+                  Harga konstruksi baja ringan bervariasi antara Rp 150.000 - Rp
+                  300.000 per meter persegi tergantung jenis material,
+                  kompleksitas, dan lokasi. Kami memberikan penawaran gratis
+                  setelah survey lokasi.
+                </p>
+              </div>
+            </details>
+
+            <details
+              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              style={{ border: "1px solid var(--border)" }}
+            >
+              <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3
+                  className="text-xl font-semibold theme-transition"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  Apakah baja ringan tahan lama dan anti karat?
+                </h3>
+                <FaCheckCircle className="text-blue-600 text-xl group-open:rotate-180 transition-transform duration-300" />
+              </summary>
+              <div className="px-6 pb-6">
+                <p
+                  className="text-lg leading-relaxed theme-transition"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
+                  Ya, baja ringan yang kami gunakan memiliki lapisan anti karat
+                  (galvanized) dan dapat bertahan hingga 20-30 tahun. Kami
+                  memberikan garansi 5 tahun untuk memastikan kualitas
+                  konstruksi.
+                </p>
+              </div>
+            </details>
+
+            <details
+              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              style={{ border: "1px solid var(--border)" }}
+            >
+              <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3
+                  className="text-xl font-semibold theme-transition"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  Apakah Anda melayani area di luar Tasikmalaya?
+                </h3>
+                <FaCheckCircle className="text-blue-600 text-xl group-open:rotate-180 transition-transform duration-300" />
+              </summary>
+              <div className="px-6 pb-6">
+                <p
+                  className="text-lg leading-relaxed theme-transition"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
+                  Ya, kami melayani area Jawa Barat termasuk Bandung, Bogor,
+                  Bekasi, dan Jakarta. Untuk area di luar Jawa Barat, kami dapat
+                  memberikan konsultasi dan estimasi biaya transportasi.
+                </p>
+              </div>
+            </details>
+
+            <details
+              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              style={{ border: "1px solid var(--border)" }}
+            >
+              <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3
+                  className="text-xl font-semibold theme-transition"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  Bagaimana proses pemesanan dan pengerjaan?
+                </h3>
+                <FaCheckCircle className="text-blue-600 text-xl group-open:rotate-180 transition-transform duration-300" />
+              </summary>
+              <div className="px-6 pb-6">
+                <p
+                  className="text-lg leading-relaxed theme-transition"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
+                  Proses dimulai dengan konsultasi dan survey lokasi gratis,
+                  kemudian pembuatan proposal dan kontrak, persiapan material,
+                  dan pengerjaan sesuai jadwal yang disepakati. Tim kami akan
+                  mengawasi setiap tahap pengerjaan.
+                </p>
+              </div>
+            </details>
+          </div>
         </div>
       </section>
 
@@ -1390,10 +1694,12 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
                   <Image
                     src="/logo.png"
-                    alt="Natha Konstruksi Logo"
+                    alt="Natha Konstruksi Logo - Jasa Konstruksi Baja Ringan"
                     width={48}
                     height={48}
                     className="w-full h-full object-cover"
+                    priority
+                    quality={95}
                   />
                 </div>
                 <div>
@@ -1504,6 +1810,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   );
 }
