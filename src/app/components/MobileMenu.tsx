@@ -7,6 +7,7 @@ import {
   FaMapMarkerAlt,
   FaInstagram,
   FaFacebook,
+  FaTiktok,
 } from "react-icons/fa";
 
 export default function MobileMenu() {
@@ -382,7 +383,7 @@ export default function MobileMenu() {
                         "linear-gradient(135deg, #ff0050 0%, #00f2ea 100%)",
                     }}
                   >
-                    <span className="text-lg sm:text-2xl">🎵</span>
+                    <FaTiktok className="text-lg sm:text-2xl" />
                   </a>
                   <a
                     href="https://wa.me/62882001425081?text=Halo%20Natha%20Konstruksi%2C%20Saya%20ingin%20mengenai%20layanan%20Anda"

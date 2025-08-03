@@ -11,6 +11,7 @@ import {
   FaShieldAlt,
   FaInstagram,
   FaFacebook,
+  FaTiktok,
 } from "react-icons/fa";
 import MobileMenu from "./components/MobileMenu";
 import ThemeToggle from "./components/ThemeToggle";
@@ -299,7 +300,7 @@ export default function Home() {
                       "linear-gradient(135deg, #ff0050 0%, #00f2ea 100%)",
                   }}
                 >
-                  <span className="text-lg">🎵</span>
+                  <FaTiktok className="text-lg" />
                   <span className="font-semibold text-sm">TikTok</span>
                 </a>
                 <a
@@ -623,7 +624,7 @@ export default function Home() {
                     "linear-gradient(135deg, #ff0050 0%, #00f2ea 100%)",
                 }}
               >
-                <span className="text-2xl">🎵</span>
+                <FaTiktok className="text-2xl" />
                 <span className="font-semibold">TikTok</span>
               </a>
               <a
@@ -1795,7 +1796,7 @@ export default function Home() {
                         "linear-gradient(135deg, #ff0050 0%, #00f2ea 100%)",
                     }}
                   >
-                    <span className="text-2xl">🎵</span>
+                    <FaTiktok className="text-2xl" />
                   </a>
                   <a
                     href="https://wa.me/62882001425081?text=Halo%20Natha%20Konstruksi%2C%20Saya%20ingin%20mengenai%20layanan%20Anda"
@@ -2071,20 +2072,45 @@ export default function Home() {
                 className="space-y-3"
                 style={{ color: "var(--muted-foreground)" }}
               >
-                <li className="transition-colors cursor-pointer hover:text-foreground">
-                  Atap Rumah
+                <li>
+                  <a
+                    href="#layanan"
+                    className="transition-colors cursor-pointer hover:text-foreground block"
+                  >
+                    Atap Rumah
+                  </a>
                 </li>
-                <li className="transition-colors cursor-pointer hover:text-foreground">
-                  Kandang Ternak
+                <li>
+                  <a
+                    href="#layanan"
+                    className="transition-colors cursor-pointer hover:text-foreground block"
+                  >
+                    Kandang Ternak
+                  </a>
                 </li>
-                <li className="transition-colors cursor-pointer hover:text-foreground">
-                  Gudang & Workshop
+                <li>
+                  <a
+                    href="#layanan"
+                    className="transition-colors cursor-pointer hover:text-foreground block"
+                  >
+                    Gudang & Workshop
+                  </a>
                 </li>
-                <li className="transition-colors cursor-pointer hover:text-foreground">
-                  Konstruksi Komersial
+                <li>
+                  <a
+                    href="#layanan"
+                    className="transition-colors cursor-pointer hover:text-foreground block"
+                  >
+                    Konstruksi Komersial
+                  </a>
                 </li>
-                <li className="transition-colors cursor-pointer hover:text-foreground">
-                  Atap Masjid
+                <li>
+                  <a
+                    href="#layanan"
+                    className="transition-colors cursor-pointer hover:text-foreground block"
+                  >
+                    Atap Masjid
+                  </a>
                 </li>
               </ul>
             </div>
@@ -2095,20 +2121,45 @@ export default function Home() {
                 className="space-y-3"
                 style={{ color: "var(--muted-foreground)" }}
               >
-                <li className="transition-colors cursor-pointer hover:text-foreground">
-                  Tentang Kami
+                <li>
+                  <a
+                    href="#tentang"
+                    className="transition-colors cursor-pointer hover:text-foreground block"
+                  >
+                    Tentang Kami
+                  </a>
                 </li>
-                <li className="transition-colors cursor-pointer hover:text-foreground">
-                  Tim Ahli
+                <li>
+                  <a
+                    href="#tim"
+                    className="transition-colors cursor-pointer hover:text-foreground block"
+                  >
+                    Tim Ahli
+                  </a>
                 </li>
-                <li className="transition-colors cursor-pointer hover:text-foreground">
-                  Proyek
+                <li>
+                  <a
+                    href="#proyek"
+                    className="transition-colors cursor-pointer hover:text-foreground block"
+                  >
+                    Proyek
+                  </a>
                 </li>
-                <li className="transition-colors cursor-pointer hover:text-foreground">
-                  Testimoni
+                <li>
+                  <a
+                    href="#testimoni"
+                    className="transition-colors cursor-pointer hover:text-foreground block"
+                  >
+                    Testimoni
+                  </a>
                 </li>
-                <li className="transition-colors cursor-pointer hover:text-foreground">
-                  Galeri
+                <li>
+                  <a
+                    href="#galeri"
+                    className="transition-colors cursor-pointer hover:text-foreground block"
+                  >
+                    Galeri
+                  </a>
                 </li>
               </ul>
             </div>
@@ -2157,6 +2208,18 @@ export default function Home() {
                     style={{ color: "var(--muted-foreground)" }}
                   >
                     @kontruksikandangayam
+                  </a>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <FaTiktok style={{ color: "var(--primary)" }} />
+                  <a
+                    href="https://www.tiktok.com/@nathakonstruksi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-foreground"
+                    style={{ color: "var(--muted-foreground)" }}
+                  >
+                    @nathakonstruksi
                   </a>
                 </li>
                 <li className="flex items-center space-x-2">
