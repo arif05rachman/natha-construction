@@ -43,7 +43,7 @@ export default function Home() {
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="Natha Konstruksi Logo - Jasa Konstruksi Baja Ringan"
                   width={48}
                   height={48}
@@ -2036,7 +2036,7 @@ export default function Home() {
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
                   <Image
-                    src="/logo.png"
+                    src="/logo.webp"
                     alt="Natha Konstruksi Logo - Jasa Konstruksi Baja Ringan"
                     width={48}
                     height={48}

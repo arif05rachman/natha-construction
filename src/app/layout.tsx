@@ -171,7 +171,7 @@ export default function RootLayout({
               description:
                 "Spesialis konstruksi baja ringan untuk atap rumah, kandang ternak, gudang, dan workshop. Kualitas terjamin, harga bersaing. Harga mulai Rp 150.000/m². Garansi 5 tahun.",
               url: "https://natha-konstruksi.com",
-              logo: "https://natha-konstruksi.com/logo.png",
+              logo: "https://natha-konstruksi.com/logo.webp",
               image: "https://natha-konstruksi.com/images/hero-1.jpg",
               telephone: "+62882001425081",
               email: "kontruksiayam93@gmail.com",
@@ -308,7 +308,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Natha Konstruksi",
               url: "https://natha-konstruksi.com",
-              logo: "https://natha-konstruksi.com/logo.png",
+              logo: "https://natha-konstruksi.com/logo.webp",
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+62882001425081",
@@ -513,9 +513,78 @@ export default function RootLayout({
         <link rel="preconnect" href="https://wa.me" />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/logo.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        <link
+          rel="icon"
+          href="/favicon-16x16.png"
+          sizes="16x16"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicon-32x32.png"
+          sizes="32x32"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicon-48x48.png"
+          sizes="48x48"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicon-64x64.png"
+          sizes="64x64"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicon-96x96.png"
+          sizes="96x96"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicon-128x128.png"
+          sizes="128x128"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicon-192x192.png"
+          sizes="192x192"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicon-256x256.png"
+          sizes="256x256"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicon-512x512.png"
+          sizes="512x512"
+          type="image/png"
+        />
+
+        {/* Apple Touch Icons */}
+        <link rel="apple-touch-icon" href="/favicon-192x192.png" />
+        <link
+          rel="apple-touch-icon"
+          href="/favicon-256x256.png"
+          sizes="256x256"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/favicon-512x512.png"
+          sizes="512x512"
+        />
+
+        {/* Microsoft Tiles */}
+        <meta name="msapplication-TileImage" content="/favicon-256x256.png" />
+        <meta name="msapplication-TileColor" content="#2563eb" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
 
         {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
@@ -852,7 +921,7 @@ export default function RootLayout({
 
         {/* Preload Critical Resources */}
         <link rel="preload" href="/images/hero-1.jpg" as="image" />
-        <link rel="preload" href="/logo.png" as="image" />
+        <link rel="preload" href="/logo.webp" as="image" />
         <link rel="preload" href="/globals.css" as="style" />
         <link
           rel="preload"
@@ -954,7 +1023,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Natha Konstruksi" />
         <meta name="msapplication-TileTitle" content="Natha Konstruksi" />
         <meta name="msapplication-TileColor" content="#2563eb" />
-        <meta name="msapplication-TileImage" content="/logo.png" />
+        <meta name="msapplication-TileImage" content="/logo.webp" />
 
         {/* Search Engine Optimization */}
         <meta name="google" content="notranslate" />
