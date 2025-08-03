@@ -236,13 +236,20 @@ export default function Home() {
             <source src="/images/hero-video.mp4" type="video/mp4" />
             <source src="/images/hero-video.webm" type="video/webm" />
             {/* Fallback for browsers that don't support video */}
-            <img src="/images/hero-1.jpg" alt="Natha Konstruksi Hero Image" className="w-full h-full object-cover" />
+            <img
+              src="/images/hero-1.jpg"
+              alt="Natha Konstruksi Hero Image"
+              className="w-full h-full object-cover"
+            />
           </video>
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
         </div>
 
-        <div id="main-content" className="container mx-auto px-4 py-20 relative z-10">
+        <div
+          id="main-content"
+          className="container mx-auto px-4 py-20 relative z-10"
+        >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <h1
@@ -291,6 +298,28 @@ export default function Home() {
                   className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-center font-semibold text-lg backdrop-blur-sm"
                 >
                   Lihat Layanan
+                </a>
+              </div>
+
+              {/* Social Media Buttons */}
+              <div className="flex justify-center lg:justify-start space-x-4 mt-6">
+                <a
+                  href="https://www.tiktok.com/@kontruksikandang"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black text-white px-4 py-2 rounded-xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+                >
+                  <span className="text-lg">🎵</span>
+                  <span className="font-semibold text-sm">TikTok</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/kontruksikandangayam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+                >
+                  <FaInstagram className="text-lg" />
+                  <span className="font-semibold text-sm">Instagram</span>
                 </a>
               </div>
             </div>
@@ -557,6 +586,28 @@ export default function Home() {
             >
               Portfolio hasil pekerjaan konstruksi baja ringan kami
             </p>
+
+            {/* Social Media Buttons */}
+            <div className="flex justify-center space-x-4 mt-8">
+              <a
+                href="https://www.tiktok.com/@kontruksikandang"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-black text-white px-6 py-3 rounded-2xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+              >
+                <span className="text-2xl">🎵</span>
+                <span className="font-semibold">TikTok</span>
+              </a>
+              <a
+                href="https://www.instagram.com/kontruksikandangayam"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+              >
+                <FaInstagram className="text-xl" />
+                <span className="font-semibold">Instagram</span>
+              </a>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1509,6 +1560,14 @@ export default function Home() {
                     className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   >
                     <FaInstagram className="text-2xl" />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@kontruksikandang"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-black text-white p-4 rounded-2xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
+                    <span className="text-2xl">🎵</span>
                   </a>
                   <a
                     href="https://wa.me/62882001425081?text=Halo%20Natha%20Konstruksi%2C%20Saya%20ingin%20mengenai%20layanan%20Anda"

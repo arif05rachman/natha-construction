@@ -32,5 +32,8 @@ Allow: /manifest.json
 Allow: /robots.txt
 Allow: /sitemap.xml
 
+# Allow social media links
+Allow: https://www.tiktok.com/@kontruksikandang
+
 # Crawl delay for better performance
 Crawl-delay: 0.5 

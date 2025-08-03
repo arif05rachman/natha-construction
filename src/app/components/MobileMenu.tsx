@@ -321,7 +321,7 @@ export default function MobileMenu() {
                 >
                   Hubungi Kami
                 </h4>
-                <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
                   <a
                     href="https://www.facebook.com/profile.php?id=61557044876692"
                     target="_blank"
@@ -337,6 +337,14 @@ export default function MobileMenu() {
                     className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
                   >
                     <FaInstagram className="text-lg sm:text-2xl" />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@kontruksikandang"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-black text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
+                  >
+                    <span className="text-lg sm:text-2xl">🎵</span>
                   </a>
                   <a
                     href="https://wa.me/62882001425081?text=Halo%20Natha%20Konstruksi%2C%20Saya%20ingin%20mengenai%20layanan%20Anda"

@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     "konstruksi kandang ternak",
     "baja ringan anti karat",
     "garansi konstruksi baja ringan",
+    "tiktok konstruksi",
   ].join(", "),
   authors: [{ name: "Natha Konstruksi" }],
   creator: "Natha Konstruksi",
@@ -277,6 +278,7 @@ export default function RootLayout({
               sameAs: [
                 "https://www.facebook.com/profile.php?id=61557044876692",
                 "https://www.instagram.com/kontruksikandangayam",
+                "https://www.tiktok.com/@kontruksikandang",
               ],
               foundingDate: "2014",
               numberOfEmployees: "15",
@@ -307,6 +309,7 @@ export default function RootLayout({
               sameAs: [
                 "https://www.facebook.com/profile.php?id=61557044876692",
                 "https://www.instagram.com/kontruksikandangayam",
+                "https://www.tiktok.com/@kontruksikandang",
               ],
             }),
           }}
@@ -519,6 +522,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google.com" />
         <link rel="preconnect" href="https://www.facebook.com" />
         <link rel="preconnect" href="https://www.instagram.com" />
+        <link rel="preconnect" href="https://www.tiktok.com" />
         <link rel="preconnect" href="https://wa.me" />
 
         {/* Favicon */}
@@ -659,7 +663,7 @@ export default function RootLayout({
         <meta name="content:language" content="Indonesian" />
         <meta
           name="content:target_audience"
-          content="Property Owners, Business Owners, Contractors"
+          content="Property Owners, Business Owners, Contractors, Social Media Users"
         />
         <meta name="content:update_frequency" content="Weekly" />
         <meta name="content:last_updated" content="2024-12-19" />
@@ -703,7 +707,7 @@ export default function RootLayout({
         <meta name="conversion:secondary_cta" content="Hubungi Kami" />
         <meta
           name="conversion:contact_methods"
-          content="WhatsApp, Phone, Email, Contact Form"
+          content="WhatsApp, Phone, Email, Contact Form, TikTok"
         />
         <meta
           name="conversion:lead_magnets"
@@ -715,7 +719,7 @@ export default function RootLayout({
         />
         <meta
           name="conversion:social_proof"
-          content="Customer Testimonials, Project Gallery, Reviews"
+          content="Customer Testimonials, Project Gallery, Reviews, TikTok Videos"
         />
         <meta
           name="conversion:urgency"
@@ -906,6 +910,10 @@ export default function RootLayout({
         <meta
           name="social:instagram"
           content="https://www.instagram.com/kontruksikandangayam"
+        />
+        <meta
+          name="social:tiktok"
+          content="https://www.tiktok.com/@kontruksikandang"
         />
         <meta name="social:whatsapp" content="https://wa.me/62882001425081" />
 
@@ -1123,9 +1131,14 @@ export default function RootLayout({
           name="social:instagram"
           content="https://www.instagram.com/kontruksikandangayam"
         />
+        <meta
+          name="social:tiktok"
+          content="https://www.tiktok.com/@kontruksikandang"
+        />
         <meta name="social:whatsapp" content="https://wa.me/62882001425081" />
         <meta name="social:facebook:page_id" content="61557044876692" />
         <meta name="social:instagram:username" content="kontruksikandangayam" />
+        <meta name="social:tiktok:username" content="kontruksikandang" />
         <meta name="social:whatsapp:phone" content="+62882001425081" />
 
         {/* Content Optimization - Additional */}
@@ -1134,15 +1147,15 @@ export default function RootLayout({
         <meta name="article:section" content="Construction" />
         <meta
           name="article:tag"
-          content="konstruksi baja ringan, atap rumah, kandang ternak, gudang, workshop, tasikmalaya"
+          content="konstruksi baja ringan, atap rumah, kandang ternak, gudang, workshop, tasikmalaya, tiktok, video konstruksi"
         />
         <meta
           name="news_keywords"
-          content="konstruksi baja ringan, atap rumah, kandang ternak, tasikmalaya, jasa konstruksi"
+          content="konstruksi baja ringan, atap rumah, kandang ternak, tasikmalaya, jasa konstruksi, tiktok konstruksi"
         />
         <meta
           name="keywords"
-          content="konstruksi baja ringan, atap rumah, kandang ayam, kandang ternak, jasa konstruksi, konstruksi tasikmalaya, baja ringan, atap baja ringan, kandang sapi, gudang baja ringan, workshop konstruksi, atap masjid, konstruksi komersial, jasa pembuatan kandang, kontraktor baja ringan, harga baja ringan per meter, konstruksi baja ringan tasikmalaya, jasa atap rumah, kandang ayam petelur, gudang komersial, workshop industri, atap masjid modern, konstruksi kandang ternak, baja ringan anti karat, garansi konstruksi baja ringan"
+          content="konstruksi baja ringan, atap rumah, kandang ayam, kandang ternak, jasa konstruksi, konstruksi tasikmalaya, baja ringan, atap baja ringan, kandang sapi, gudang baja ringan, workshop konstruksi, atap masjid, konstruksi komersial, jasa pembuatan kandang, kontraktor baja ringan, harga baja ringan per meter, konstruksi baja ringan tasikmalaya, jasa atap rumah, kandang ayam petelur, gudang komersial, workshop industri, atap masjid modern, konstruksi kandang ternak, baja ringan anti karat, garansi konstruksi baja ringan, tiktok konstruksi, video konstruksi"
         />
 
         {/* Verification Codes - Additional */}

@@ -81,6 +81,18 @@
           "sizes": "96x96"
         }
       ]
+    },
+    {
+      "name": "TikTok",
+      "short_name": "TikTok",
+      "description": "Follow kami di TikTok",
+      "url": "https://www.tiktok.com/@kontruksikandang",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
     }
   ]
 } 
